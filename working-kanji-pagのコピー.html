@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>First Grade Kanji Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .kanji-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            position: relative;
+        }
+
+        .kanji-char {
+            font-size: 42px;
+            text-align: center;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .kanji-char:hover {
+            color: #4CAF50;
+        }
+
+        .info {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .strokes {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .dict-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .dict-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 2px 5px;
+            border: 1px solid #4CAF50;
+            border-radius: 3px;
+        }
+
+        .dict-link a:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* 縦書き表示の最適化 */
+        .vertical-mode .kanji-card {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            min-height: 450px;
+            padding: 20px 15px;
+        }
+
+        .vertical-mode .kanji-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            writing-mode: vertical-rl;
+        }
+
+        .vertical-mode .kanji-char {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 48px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .vertical-mode .readings {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            margin: 10px 0;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .vertical-mode .examples {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .vertical-mode .strokes {
+            writing-mode: horizontal-tb;
+            transform: rotate(90deg);
+            transform-origin: left top;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 12px;
+        }
+
+        .vertical-mode .dict-link {
+            writing-mode: horizontal-tb;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        /* カードのグリッドレイアウトを調整 */
+        .vertical-mode.kanji-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        /* レイアウト切り替えボタン */
+        .layout-switch {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .layout-switch:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>First Grade Kanji Learning</h1>
+        <p>80 Essential Characters</p>
+    </div>
+
+    <div id="controls">
+        <button class="layout-switch" onclick="toggleLayout()">縦書き切替</button>
+        <button onclick="showAll()">Show All</button>
+        <button onclick="filterByStrokes(1, 3)">1-3 Strokes</button>
+        <button onclick="filterByStrokes(4, 6)">4-6 Strokes</button>
+        <button onclick="filterByStrokes(7, 10)">7-10 Strokes</button>
+    </div>
+
+    <div id="kanji-container" class="kanji-grid"></div>
+
+    <script src="kanji-data.js"></script>
+    
+    <script>
+        function createKanjiCard(data) {
+            const kanjiUrl = `https://kanjivg.tagaini.net/viewer.html?kanji=${encodeURIComponent(data.kanji)}`;
+            return `
+                <div class="kanji-card" data-strokes="${data.strokes}">
+                    <div class="dict-link">
+                        <a href="${kanjiUrl}" target="_blank" title="View stroke order">KanjiVG</a>
+                    </div>
+                    <div class="strokes">Strokes: ${data.strokes}</div>
+                    <div class="kanji-content">
+                        <div class="kanji-char" onclick="window.open('${kanjiUrl}', '_blank')">
+                            ${data.kanji}
+                        </div>
+                        <div class="readings">
+                            <div>音読み: ${data.onReading}</div>
+                            <div>訓読み: ${data.kunReading}</div>
+                        </div>
+                        <div class="examples">
+                            <div>Examples:</div>
+                            <div>${data.examples.join('<br>')}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showAll() {
+            const container = document.getElementById('kanji-container');
+            container.innerHTML = kanjiData.map(data => createKanjiCard(data)).join('');
+        }
+
+        function filterByStrokes(min, max) {
+            const container = document.getElementById('kanji-container');
+            const filtered = kanjiData.filter(k => k.strokes >= min && k.strokes <= max);
+            container.innerHTML = filtered.map(data => createKanjiCard(data)).join('');
+        }
+
+        // 追加：レイアウト切り替え関数
+        function toggleLayout() {
+            const container = document.getElementById('kanji-container');
+            container.classList.toggle('vertical-mode');
+            
+            // ボタンのテキストを更新
+            const button = document.querySelector('.layout-switch');
+            if (container.classList.contains('vertical-mode')) {
+                button.textContent = '横書き切替';
+            } else {
+                button.textContent = '縦書き切替';
+            }
+        }
+
+        // Initialize the page
+        window.onload = showAll;
+    </script>
+</body>
+</html>

@@ -2,25 +2,45 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title> Kanji Learning</title>
+    <title>Japanese Elementary School Kanji Learning</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f0f2f5;
         }
 
         #header {
             text-align: center;
             margin-bottom: 30px;
+            padding: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        #controls {
+        .grade-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .control-row {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .grade-info {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         button {
@@ -30,6 +50,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
         }
 
         button:hover {
@@ -38,23 +59,30 @@
 
         .kanji-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .kanji-card {
-            border: 1px solid #ddd;
+            border: none;
             border-radius: 8px;
             padding: 15px;
-            background: white;
+            background: #ffffff;
             position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #e8f3e8;
+            height: 400px;
+            width: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .kanji-char {
-            font-size: 42px;
+            font-size: 48px;
             text-align: center;
-            margin: 10px 0;
+            margin: 20px 0;
             cursor: pointer;
+            color: #2c3e50;
         }
 
         .kanji-char:hover {
@@ -62,23 +90,28 @@
         }
 
         .info {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex-grow: 1;
         }
 
-        .strokes {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #666;
+        .readings {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .examples {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 10px;
         }
 
         .dict-link {
             position: absolute;
             top: 10px;
-            left: 10px;
+            right: 10px;
         }
 
         .dict-link a {
@@ -95,106 +128,449 @@
             color: white;
         }
 
-        /* 縦書き表示の最適化 */
-        .vertical-mode .kanji-card {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            min-height: 450px;
-            padding: 20px 15px;
+        .okurigana {
+            color: #ff0000;
         }
 
-        .vertical-mode .kanji-content {
+        .strokes {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .control-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        /* 左侧面板容器 */
+        .left-panel {
             display: flex;
             flex-direction: column;
-            height: 100%;
-            writing-mode: vertical-rl;
-        }
-
-        .vertical-mode .kanji-char {
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            font-size: 48px;
-            margin-bottom: 20px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .vertical-mode .readings {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            margin: 10px 0;
-            padding: 10px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .vertical-mode .examples {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
-        }
-
-        .vertical-mode .strokes {
-            writing-mode: horizontal-tb;
-            transform: rotate(90deg);
-            transform-origin: left top;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 12px;
-        }
-
-        .vertical-mode .dict-link {
-            writing-mode: horizontal-tb;
-            transform: rotate(90deg);
-            transform-origin: left bottom;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-        }
-
-        /* カードのグリッドレイアウトを調整 */
-        .vertical-mode.kanji-grid {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
         }
 
-        /* レイアウト切り替えボタン */
-        .layout-switch {
+        /* 通用标题样式 */
+        h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* 年级选择器样式 */
+        .grade-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .grade-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .grade-number {
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .kanji-count {
+            font-size: 12px;
+            color: #666;
+            margin-left: 8px;
+        }
+
+        /* 五十音图分组选择器样式 */
+        .gojuon-buttons {
+            display: flex;
+            gap: 4px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        /* 通用按钮样式 */
+        .grade-btn, .gojuon-btn {
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .grade-btn:hover, .gojuon-btn:hover {
+            background: #f8f8f8;
+            transform: translateY(-1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .grade-btn.active, .gojuon-btn.active {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .grade-btn.active .kanji-count {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .grade-buttons, .gojuon-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .grade-btn, .gojuon-btn {
+                flex: 1 1 calc(33.333% - 8px);
+                justify-content: center;
+            }
+        }
+
+        /* 多选面板样式 */
+        .multi-select-panel {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 100;
+            margin-top: 5px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .apply-btn {
+            width: 100%;
+            padding: 8px;
             background: #4CAF50;
             color: white;
             border: none;
-            padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
-            margin-right: 10px;
         }
 
-        .layout-switch:hover {
+        .apply-btn:hover {
             background: #45a049;
+        }
+
+        /* 确保年级面板有相对定位 */
+        .grade-panel {
+            position: relative;
+        }
+
+        /* 学习模式控制样式 */
+        .mode-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .mode-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .mode-btn:hover {
+            background: #f8f8f8;
+            transform: translateY(-2px);
+        }
+
+        .mode-btn.active {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        /* 五十音图面板样式 */
+        .gojuon-panel {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .gojuon-buttons {
+            display: flex;
+            gap: 4px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .gojuon-btn {
+            padding: 4px 8px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* 滚动条样式优化 */
+        .gojuon-buttons::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .gojuon-buttons::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 2px;
+        }
+
+        .gojuon-buttons::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        .gojuon-buttons::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+
+        /* 通用按钮悬停和激活状态 */
+        .grade-btn:hover, .gojuon-btn:hover {
+            background: #f8f8f8;
+            transform: translateY(-1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .grade-btn.active, .gojuon-btn.active {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        /* 修改当前年级汉字展示面板样式 */
+        .current-grade-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 230px;
+            height: 700px;
+            background: rgb(149, 189, 207);
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .current-grade-panel.visible {
+            display: block;
+        }
+
+        .current-grade-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+
+        .current-grade-kanji {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 20px;
+            line-height: 1.5;
+            padding: 5px;
+        }
+
+        .current-grade-kanji span {
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .current-grade-kanji span:hover {
+            color: #4CAF50;
+            transform: scale(1.2);
+            background-color: #f0f8f0;
+            border-radius: 4px;
+        }
+
+        /* 汉字卡片高亮动画 */
+        @keyframes highlightAnimation {
+            0% { background-color: #e8f5e9; }
+            100% { background-color: #ffffff; }
+        }
+
+        .kanji-card.highlight {
+            animation: highlightAnimation 2s ease;
+        }
+
+        /* 列表中汉字的样式 */
+        .kanji-item {
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .kanji-item:hover {
+            color: #4CAF50;
+            transform: scale(1.2);
+            background-color: #f0f8f0;
+        }
+
+        .kanji-item.active {
+            color: white;
+            background-color: #4CAF50;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
     <div id="header">
-        <h1> Kanji Learning</h1>
-        <p> Essential Characters</p>
+        <h1>Japanese Elementary School Kanji Learning</h1>
+        <p>1080 Essential Characters</p>
     </div>
 
     <div id="controls">
-        <button class="layout-switch" onclick="toggleLayout()">縦書き切替</button>
-        <button onclick="showAll()">Show All</button>
-        <button onclick="filterByStrokes(1, 3)">1-3 Strokes</button>
-        <button onclick="filterByStrokes(4, 6)">4-6 Strokes</button>
-        <button onclick="filterByStrokes(7, 10)">7-10 Strokes</button>
+        <div class="control-panel">
+            <!-- 左侧面板容器 -->
+            <div class="left-panel">
+                <!-- ��级选择器 -->
+                <div class="grade-panel">
+                    <h3>学年選択</h3>
+                    <div class="grade-buttons">
+                        <button class="grade-btn active" data-grade="all">
+                            <span class="grade-number">全</span>
+                            <span class="grade-label">全学年</span>
+                            <span class="kanji-count">1080字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="1">
+                            <span class="grade-number">1</span>
+                            <span class="grade-label">1年生</span>
+                            <span class="kanji-count">80字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="2">
+                            <span class="grade-number">2</span>
+                            <span class="grade-label">2年</span>
+                            <span class="kanji-count">160字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="3">
+                            <span class="grade-number">3</span>
+                            <span class="grade-label">3年</span>
+                            <span class="kanji-count">200字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="4">
+                            <span class="grade-number">4</span>
+                            <span class="grade-label">4年生</span>
+                            <span class="kanji-count">200字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="5">
+                            <span class="grade-number">5</span>
+                            <span class="grade-label">5年生</span>
+                            <span class="kanji-count">185字</span>
+                        </button>
+                        <button class="grade-btn" data-grade="6">
+                            <span class="grade-number">6</span>
+                            <span class="grade-label">6年生</span>
+                            <span class="kanji-count">181字</span>
+                        </button><!-- 其他年级按钮类似 -->
+                    </div>
+                </div>
+                
+                <!-- 五十音图分组选择器 -->
+                <div class="gojuon-panel">
+                    <h3>五十音順</h3>
+                    <div class="gojuon-buttons">
+                        <button class="gojuon-btn" data-group="あ">あ行</button>
+                        <button class="gojuon-btn" data-group="か">か行</button>
+                        <button class="gojuon-btn" data-group="さ">さ行</button>
+                        <button class="gojuon-btn" data-group="た">た行</button>
+                        <button class="gojuon-btn" data-group="な">な行</button>
+                        <button class="gojuon-btn" data-group="は">は行</button>
+                        <button class="gojuon-btn" data-group="ま">ま行</button>
+                        <button class="gojuon-btn" data-group="や">や行</button>
+                        <button class="gojuon-btn" data-group="ら">ら行</button>
+                        <button class="gojuon-btn" data-group="わ">わ行</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧内容区域 -->
+            <div class="right-panel">
+                <!-- 其他内容 -->
+            </div>
+        </div>
     </div>
 
     <div id="kanji-container" class="kanji-grid"></div>
 
-    <script src="kanji-data-grade3.js"></script>
+    <!-- 先加载数据 -->
+    <script src="kanji-data.js"></script>
     
+    <!-- 然后是主要逻辑 -->
     <script>
+        function formatKunReading(kunReading) {
+            if (!kunReading) return "";
+            
+            // Split multiple readings
+            return kunReading.split('、').map(reading => {
+                // Replace hyphen-separated parts with styled okurigana
+                return reading.replace(/([^-]+)-([^,]+)/g, '$1<span class="okurigana">$2</span>');
+            }).join('、');
+        }
+
         function createKanjiCard(data) {
             const kanjiUrl = `https://kanjivg.tagaini.net/viewer.html?kanji=${encodeURIComponent(data.kanji)}`;
             return `
@@ -202,19 +578,22 @@
                     <div class="dict-link">
                         <a href="${kanjiUrl}" target="_blank" title="View stroke order">KanjiVG</a>
                     </div>
+                    <div class="grade-info">
+                        ${data.grade}年生
+                    </div>
                     <div class="strokes">Strokes: ${data.strokes}</div>
-                    <div class="kanji-content">
-                        <div class="kanji-char" onclick="window.open('${kanjiUrl}', '_blank')">
-                            ${data.kanji}
+                    <div class="kanji-char" onclick="handleKanjiClick(event, '${kanjiUrl}')">
+                        ${data.kanji}
+                    </div>
+                    <div class="info">
+                        <div class="readings">
+                            <span style="color: red;">音</span>: ${data.onReading}
                         </div>
                         <div class="readings">
-                            <div>音読み: ${data.onReading}</div>
-                            <div>訓読み: ${data.kunReading}</div>
+                            <span style="color: blue;">訓</span>: ${formatKunReading(data.kunReading)}
                         </div>
-                        <div class="examples">
-                            <div>Examples:</div>
-                            <div>${data.examples.join('<br>')}</div>
-                        </div>
+                        <div>Examples:</div>
+                        <div class="examples">${data.examples.join('<br>')}</div>
                     </div>
                 </div>
             `;
@@ -231,22 +610,329 @@
             container.innerHTML = filtered.map(data => createKanjiCard(data)).join('');
         }
 
-        // 追加：レイアウト切り替え関数
-        function toggleLayout() {
+        // 添加全局变量来跟踪当前选中的年级
+        let currentGrade = 'all';
+
+        function filterByGrade(grade) {
+            currentGrade = grade; // 更新当前年级
             const container = document.getElementById('kanji-container');
-            container.classList.toggle('vertical-mode');
+            let filtered;
             
-            // ボタンのテキストを更新
-            const button = document.querySelector('.layout-switch');
-            if (container.classList.contains('vertical-mode')) {
-                button.textContent = '横書き切替';
+            if (grade === 'all') {
+                filtered = kanjiData;
             } else {
-                button.textContent = '縦書き切替';
+                filtered = kanjiData.filter(k => k.grade === parseInt(grade));
             }
+            
+            console.log(`Filtering grade ${grade}, found ${filtered.length} kanji`);
+            container.innerHTML = filtered.map(data => createKanjiCard(data)).join('');
         }
+
+        function filterBySession(grade, session) {
+            const container = document.getElementById('kanji-container');
+            const filtered = kanjiData.filter(k => k.grade === grade && k.session === session);
+            console.log(`Filtering grade ${grade}, session ${session}, found ${filtered.length} kanji`);
+            container.innerHTML = filtered.map(data => createKanjiCard(data)).join('');
+        }
+
+        // 定义五十音行的映射关系
+        const gojuonMap = {
+            'あ': ['あ', 'い', 'う', 'え', 'お'],
+            'か': ['か', 'き', 'く', 'け', 'こ'],
+            'さ': ['さ', 'し', 'す', 'せ', 'そ'],
+            'た': ['た', 'ち', 'つ', 'て', 'と'],
+            'な': ['な', 'に', 'ぬ', 'ね', 'の'],
+            'は': ['は', 'ひ', 'ふ', 'へ', 'ほ'],
+            'ま': ['ま', 'み', 'む', 'め', 'も'],
+            'や': ['や', 'ゆ', 'よ'],
+            'ら': ['ら', 'り', 'る', 'れ', 'ろ'],
+            'わ': ['わ', 'を', 'ん']
+        };
+
+        function getKanjiReading(kanji) {
+            const data = kanjiData.find(k => k.kanji === kanji);
+            return data ? data.kunReading.split('、')[0].replace(/-.*$/, '') : '';
+        }
+
+        function getKanjiOnReading(kanji) {
+            const data = kanjiData.find(k => k.kanji === kanji);
+            if (!data || !data.onReading) return '';
+            
+            // 获取第一个音读，并转换为平假名
+            return data.onReading.split('、')[0]
+                .replace(/[ァ-ン]/g, char => {
+                    // 片假名转平假名对照表
+                    const katakanaMap = {
+                        'ア':'あ', 'イ':'い', 'ウ':'う', 'エ':'え', 'オ':'お',
+                        'カ':'か', 'キ':'き', 'ク':'く', 'ケ':'け', 'コ':'こ',
+                        'サ':'さ', 'シ':'し', 'ス':'す', 'セ':'せ', 'ソ':'そ',
+                        'タ':'た', 'チ':'ち', 'ツ':'つ', 'テ':'て', 'ト':'と',
+                        'ナ':'な', 'ニ':'に', 'ヌ':'ぬ', 'ネ':'ね', 'ノ':'の',
+                        'ハ':'は', 'ヒ':'ひ', 'フ':'ふ', 'ヘ':'へ', 'ホ':'ほ',
+                        'マ':'ま', 'ミ':'み', 'ム':'む', 'メ':'め', 'モ':'も',
+                        'ヤ':'や', 'ユ':'ゆ', 'ヨ':'よ',
+                        'ラ':'ら', 'リ':'り', 'ル':'る', 'レ':'れ', 'ロ':'ろ',
+                        'ワ':'わ', 'ヲ':'を', 'ン':'ん'
+                    };
+                    return katakanaMap[char] || char;
+                });
+        }
+
+        function filterByGojuon(group) {
+            const container = document.getElementById('kanji-container');
+            const groupKana = gojuonMap[group];
+            
+            // 先按年级筛选
+            let baseData;
+            if (currentGrade === 'all') {
+                baseData = kanjiData;
+            } else {
+                baseData = kanjiData.filter(k => k.grade === parseInt(currentGrade));
+            }
+            
+            // 然后在年级筛选结果中按五十音图筛选
+            const filtered = baseData.filter(data => {
+                const reading = getKanjiOnReading(data.kanji);
+                if (!reading) return false;
+                
+                // 获取音读的第一个假名
+                const firstKana = reading.charAt(0);
+                return groupKana.some(kana => firstKana === kana);
+            });
+
+            container.innerHTML = filtered.map(data => createKanjiCard(data)).join('');
+        }
+
+        // 确保所有函数在全局作用域可用
+        window.showAll = showAll;
+        window.filterByStrokes = filterByStrokes;
+        window.filterByGrade = filterByGrade;
+        window.filterBySession = filterBySession;
 
         // Initialize the page
         window.onload = showAll;
+
+        // 新增的交互逻辑
+        function initializeControls() {
+            // 年级选择
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const grade = btn.dataset.grade;
+                    
+                    // 移除其他活跃状态
+                    document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
+                    // 设置当前活跃状态
+                    btn.classList.add('active');
+                    
+                    // 重置五十音图按钮的活跃状态
+                    document.querySelectorAll('.gojuon-btn').forEach(b => b.classList.remove('active'));
+                    
+                    filterByGrade(grade);
+                    showCurrentGradeKanji(grade);
+                });
+            });
+
+            // 五十音图按钮事件
+            document.querySelectorAll('.gojuon-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const group = btn.dataset.group;
+                    
+                    // 移除其他活跃状态
+                    document.querySelectorAll('.gojuon-btn').forEach(b => b.classList.remove('active'));
+                    // 设置当前活跃状态
+                    btn.classList.add('active');
+                    
+                    filterByGojuon(group);
+                });
+            });
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', initializeControls);
+
+        // 添加显示当前年级所有汉字的函数
+        function showCurrentGradeKanji(grade) {
+            const panel = document.querySelector('.current-grade-panel');
+            const kanjiContainer = panel.querySelector('.current-grade-kanji');
+            const title = panel.querySelector('.current-grade-title');
+            
+            if (grade === 'all') {
+                panel.classList.remove('visible');
+                return;
+            }
+
+            // 过滤当前年级的汉字
+            const gradeKanji = kanjiData
+                .filter(k => k.grade === parseInt(grade))
+                .map(k => k.kanji);
+
+            // 更新标题
+            title.textContent = `${grade}年生の漢字一覧 (${gradeKanji.length}字)`;
+            
+            // 更新内容
+            kanjiContainer.innerHTML = gradeKanji
+                .map(kanji => `<span>${kanji}</span>`)
+                .join('');
+            
+            // 显示面板
+            panel.classList.add('visible');
+        }
+
+        // 优化滚动到指定汉字的函数
+        function scrollToKanji(targetKanji) {
+            console.log('Scrolling to kanji:', targetKanji); // 调试日志
+            
+            // 查找目标汉字卡片
+            const kanjiCards = document.querySelectorAll('.kanji-card');
+            let targetCard = null;
+            
+            for (let card of kanjiCards) {
+                const kanjiChar = card.querySelector('.kanji-char');
+                if (kanjiChar && kanjiChar.textContent.trim() === targetKanji) {
+                    targetCard = card;
+                    break;
+                }
+            }
+
+            if (targetCard) {
+                console.log('Found target card'); // 调试日志
+                
+                // 移除所有卡片的高亮效果
+                kanjiCards.forEach(card => card.classList.remove('highlight'));
+                
+                // 滚动到目标卡片
+                targetCard.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // 添加高亮效果
+                targetCard.classList.add('highlight');
+                
+                // 2秒后移除高亮效果
+                setTimeout(() => {
+                    targetCard.classList.remove('highlight');
+                }, 2000);
+            } else {
+                console.log('Target card not found'); // 调试日志
+            }
+        }
+
+        // 显示指定年级的面板
+        function showGradePanel(grade) {
+            // 隐藏所有面板
+            document.querySelectorAll('.grade-panel').forEach(panel => {
+                panel.classList.remove('visible');
+            });
+            
+            // 显示选中年级的面板
+            const panel = document.querySelector(`.grade${grade}-panel`);
+            if (panel) {
+                const kanjiContainer = panel.querySelector('.kanji-list');
+                
+                // 更新内容
+                kanjiContainer.innerHTML = gradeKanjiData[grade].kanji
+                    .map(kanji => `
+                        <span 
+                            class="kanji-item" 
+                            data-kanji="${kanji}"
+                            role="button"
+                            tabindex="0"
+                        >${kanji}</span>
+                    `)
+                    .join('');
+                
+                // 为每个汉字添加点击和键盘事件
+                kanjiContainer.querySelectorAll('.kanji-item').forEach(span => {
+                    // 点击事件
+                    span.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetKanji = span.dataset.kanji;
+                        
+                        // 移除其他汉字的激活状态
+                        kanjiContainer.querySelectorAll('.kanji-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        
+                        // 添加当前点击汉字的激活状态
+                        span.classList.add('active');
+                        
+                        // 滚动到目标汉字
+                        scrollToKanji(targetKanji);
+                    });
+
+                    // 键盘事件（支持无障碍访问）
+                    span.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            span.click();
+                        }
+                    });
+                });
+                
+                panel.classList.add('visible');
+            }
+        }
+
+        // 添加或更新样式
+        const additionalStyle = `
+            .kanji-card {
+                transition: background-color 0.3s ease;
+            }
+
+            .kanji-card.highlight {
+                background-color: #e8f5e9 !important;
+                box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+            }
+
+            .kanji-item {
+                cursor: pointer;
+                transition: all 0.2s;
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                user-select: none;
+                outline: none;
+            }
+
+            .kanji-item:hover,
+            .kanji-item:focus {
+                color: #4CAF50;
+                transform: scale(1.2);
+                background-color: #f0f8f0;
+                z-index: 1;
+            }
+
+            .kanji-item.active {
+                color: white;
+                background-color: #4CAF50;
+                transform: scale(1.1);
+            }
+
+            /* 确保卡片容器有足够的 z-index */
+            .kanji-container {
+                position: relative;
+                z-index: 1;
+            }
+        `;
+
+        // 在初始化函数中添加新样式
+        function initializeGradePanels() {
+            // 添加原有样式
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent = style + additionalStyle;  // 合并样式
+            document.head.appendChild(styleSheet);
+            
+            // ... 其他初始化代码 ...
+        }
     </script>
+
+    <div class="current-grade-panel">
+        <div class="current-grade-title">学年漢字一覧</div>
+        <div class="current-grade-kanji"></div>
+    </div>
 </body>
 </html>

@@ -475,6 +475,23 @@
             background-color: #4CAF50;
             transform: scale(1.1);
         }
+
+        /* 添加按钮样式 */
+        .toggle-grade-panel-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: rgb(16, 4, 182);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .toggle-grade-panel-btn:hover {
+            background: #4505bc;
+            transform: translateY(-1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -487,7 +504,7 @@
         <div class="control-panel">
             <!-- 左侧面板容器 -->
             <div class="left-panel">
-                <!-- ��级选择器 -->
+                <!-- 年级选择器 -->
                 <div class="grade-panel">
                     <h3>学年選択</h3>
                     <div class="grade-buttons">
@@ -527,6 +544,7 @@
                             <span class="kanji-count">181字</span>
                         </button><!-- 其他年级按钮类似 -->
                     </div>
+                    <button class="toggle-grade-panel-btn">年级Kanji面板</button>
                 </div>
                 
                 <!-- 五十音图分组选择器 -->
@@ -749,6 +767,20 @@
 
         // 页面加载时初始化
         document.addEventListener('DOMContentLoaded', initializeControls);
+
+        // 添加简单的切换功能
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.querySelector('.toggle-grade-panel-btn');
+            const gradePanel = document.querySelector('.current-grade-panel');
+
+            toggleBtn.addEventListener('click', () => {
+                if (gradePanel.style.display === 'none') {
+                    gradePanel.style.display = 'block';
+                } else {
+                    gradePanel.style.display = 'none';
+                }
+            });
+        });
 
         // 添加显示当前年级所有汉字的函数
         function showCurrentGradeKanji(grade) {

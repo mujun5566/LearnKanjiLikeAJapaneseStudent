@@ -84,7 +84,7 @@
             cursor: pointer;
             color: #2c3e50;
         }
-
+ 
         .kanji-char:hover {
             color: #4CAF50;
         }
@@ -492,12 +492,102 @@
             transform: translateY(-1px);
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
+
+        /* 添加checkbox样式 */
+        .panel-toggle {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .panel-toggle input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        /* 可选：美化checkbox样式 */
+        .panel-toggle input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .game-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .game-link:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .game-link, .resource-link, .local-resource-link {
+            display: inline-block;
+            padding: 8px 16px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .game-link {
+            background: #4CAF50;
+        }
+
+        .resource-link {
+            background: #2196F3;
+        }
+
+        .local-resource-link {
+            background: #9C27B0;  /* 紫色 */
+        }
+
+        .game-link:hover, 
+        .resource-link:hover, 
+        .local-resource-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <div id="header">
         <h1>Japanese Elementary School Kanji Learning</h1>
-        <p>1080 Essential Characters</p>
+        <p>1006 Essential Characters</p>
+        <div class="nav-links">
+    <!-- #region       
+             <a href="https://mujun327.github.io/kana-matching-game/" 
+               target="_blank" 
+               class="game-link">
+                Try Kana Matching Game →
+            </a> 
+            --> 
+            <a href="kana-matching.html" 
+               target="_blank" 
+               class="game-link">
+                Try Kana Matching Game →
+            </a>
+            <a href="KanjiResources.html"
+               class="resource-link">
+                Kanji Resources →
+            </a>
+         
+        </div>
     </div>
 
     <div id="controls">
@@ -511,7 +601,7 @@
                         <button class="grade-btn active" data-grade="all">
                             <span class="grade-number">全</span>
                             <span class="grade-label">全学年</span>
-                            <span class="kanji-count">1080字</span>
+                            <span class="kanji-count">1006字</span>
                         </button>
                         <button class="grade-btn" data-grade="1">
                             <span class="grade-number">1</span>
@@ -520,12 +610,12 @@
                         </button>
                         <button class="grade-btn" data-grade="2">
                             <span class="grade-number">2</span>
-                            <span class="grade-label">2年</span>
+                            <span class="grade-label">2年生</span>
                             <span class="kanji-count">160字</span>
                         </button>
                         <button class="grade-btn" data-grade="3">
                             <span class="grade-number">3</span>
-                            <span class="grade-label">3年</span>
+                            <span class="grade-label">3年生</span>
                             <span class="kanji-count">200字</span>
                         </button>
                         <button class="grade-btn" data-grade="4">
@@ -544,7 +634,10 @@
                             <span class="kanji-count">181字</span>
                         </button><!-- 其他年级按钮类似 -->
                     </div>
-                    <button class="toggle-grade-panel-btn">年级Kanji面板</button>
+                    <label class="panel-toggle">
+                        <input type="checkbox" id="gradePanelToggle" checked>
+                        年级面板表示
+                    </label>
                 </div>
                 
                 <!-- 五十音图分组选择器 -->
@@ -659,7 +752,7 @@
             'か': ['か', 'き', 'く', 'け', 'こ'],
             'さ': ['さ', 'し', 'す', 'せ', 'そ'],
             'た': ['た', 'ち', 'つ', 'て', 'と'],
-            'な': ['な', 'に', 'ぬ', 'ね', 'の'],
+            'な': ['���', 'に', 'ぬ', 'ね', 'の'],
             'は': ['は', 'ひ', 'ふ', 'へ', 'ほ'],
             'ま': ['ま', 'み', 'む', 'め', 'も'],
             'や': ['や', 'ゆ', 'よ'],
@@ -768,17 +861,13 @@
         // 页面加载时初始化
         document.addEventListener('DOMContentLoaded', initializeControls);
 
-        // 添加简单的切换功能
+        // 修改切换功能为checkbox
         document.addEventListener('DOMContentLoaded', () => {
-            const toggleBtn = document.querySelector('.toggle-grade-panel-btn');
+            const toggleCheckbox = document.getElementById('gradePanelToggle');
             const gradePanel = document.querySelector('.current-grade-panel');
 
-            toggleBtn.addEventListener('click', () => {
-                if (gradePanel.style.display === 'none') {
-                    gradePanel.style.display = 'block';
-                } else {
-                    gradePanel.style.display = 'none';
-                }
+            toggleCheckbox.addEventListener('change', () => {
+                gradePanel.style.display = toggleCheckbox.checked ? 'block' : 'none';
             });
         });
 

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    File: kana-matching-game-11.html
+    Description: A memory game for learning Japanese Hiragana and Katakana characters
+    Author: Mujun Design
+    Version: 1.1
+    Last Modified: 2024-12-06
+
+    Game Features:
+    - Matching pairs of Hiragana and Katakana
+    - Score tracking
+    - Timer functionality
+    - Hint system
+    - Victory indication
+    -->
+    <!--
+    Element Reference:
+    #logo - Company branding display
+    #game-info - Container for game statistics
+    #score-value - Dynamic score display element
+    #timer-value - Dynamic timer display element
+    #game-board - Main game play area
+    .smiley - Victory indicator element
+
+    Game Flow:
+    1. Player initiates game with "New Game" button
+    2. Timer starts counting from 0
+    3. Score starts at 100
+    4. Player clicks cards to find matches
+        - Correct matches increase score
+        - Incorrect matches decrease score
+    5. Optional hints can be toggled
+    6. Game ends when all matches are found
+    7. Victory emoji appears upon completion
+
+    Note: This HTML structure serves as the foundation for the game's
+    JavaScript functionality. The ::: syntax indicates special container
+    elements that will be processed by the game's initialization code.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kana Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            background-color: #e0f0e0;
+        }
+        #game-info {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #game-board {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card.katakana {
+            background-color: #ffe0b2;
+        }
+        .card.selected {
+            background-color: #a0d6b4;
+        }
+        .card.hint {
+            background-color: #ffff99;
+        }
+        .smiley {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">MUJUN DESIGN 2</div>
+    <h1>Kana Matching Game</h1>
+    <div id="game-info">
+        <span id="score">Score: <span id="score-value">100</span></span>
+        <span id="timer">Time: <span id="timer-value">0</span> seconds</span>
+    </div>
+    <p>Click on the matching Katakana and Hiragana characters</p>
+    <label><input type="checkbox" id="hint-checkbox"> Show Hints</label>
+    <div id="game-board">
+        <!-- The game board will be dynamically generated here -->
+    </div>
+    <div class="smiley" style="display: none;">😊</div>
+    <button id="reset-btn">New Game</button>
+
+    <script>
+        const kana = [
+            ['ア', 'あ'], ['イ', 'い'], ['ウ', 'う'], ['エ', 'え'], ['オ', 'お'],
+            ['カ', 'か'], ['キ', 'き'], ['ク', 'く'], ['ケ', 'け'], ['コ', 'こ'],
+            ['サ', 'さ'], ['シ', 'し'], ['ス', 'す'], ['セ', 'せ'], ['ソ', 'そ'],
+            ['タ', 'た'], ['チ', 'ち'], ['ツ', 'つ'], ['テ', 'て'], ['ト', 'と'],
+            ['ナ', 'な'], ['ニ', 'に'], ['ヌ', 'ぬ'], ['ネ', 'ね'], ['ノ', 'の'],
+            ['ハ', 'は'], ['ヒ', 'ひ'], ['フ', 'ふ'], ['ヘ', 'へ'], ['ホ', 'ほ'],
+            ['マ', 'ま'], ['ミ', 'み'], ['ム', 'む'], ['メ', 'め'], ['モ', 'も'],
+            ['ヤ', 'や'], ['ユ', 'ゆ'], ['ヨ', 'よ'],
+            ['ラ', 'ら'], ['リ', 'り'], ['ル', 'る'], ['レ', 'れ'], ['ロ', 'ろ'],
+            ['ワ', 'わ'], ['ヲ', 'を'],
+            ['ン', 'ん']
+        ];
+
+        const gameBoard = document.getElementById('game-board');
+        const resetBtn = document.getElementById('reset-btn');
+        const smiley = document.querySelector('.smiley');
+        const scoreValue = document.getElementById('score-value');
+        const timerValue = document.getElementById('timer-value');
+        const hintCheckbox = document.getElementById('hint-checkbox');
+        let selectedCards = [];
+        let score = 100;
+        let timeElapsed = 0;
+        let timer;
+
+        function createCard(char, isKatakana) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            if (isKatakana) {
+                card.classList.add('katakana');
+            }
+            card.textContent = char;
+            card.addEventListener('click', selectCard);
+            return card;
+        }
+
+        function setupBoard() {
+            gameBoard.innerHTML = '';
+            selectedCards = [];
+            smiley.style.display = 'none';
+            score = 100;
+            timeElapsed = 0;
+            scoreValue.textContent = score;
+            timerValue.textContent = timeElapsed;
+            clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+
+            const shuffledCharacters = kana.flatMap(pair => pair).sort(() => 0.5 - Math.random());
+
+            shuffledCharacters.forEach(char => {
+                const isKatakana = /[\u30A0-\u30FF]/.test(char);
+                const card = createCard(char, isKatakana);
+                gameBoard.appendChild(card);
+            });
+
+            if (hintCheckbox.checked) {
+                showHints();
+            }
+        }
+
+        function selectCard(event) {
+            const card = event.target;
+            if (card.classList.contains('selected')) {
+                return;
+            }
+            card.classList.add('selected');
+            selectedCards.push(card);
+
+            if (selectedCards.length === 2) {
+                const [card1, card2] = selectedCards;
+                const char1 = card1.textContent;
+                const char2 = card2.textContent;
+
+                if (kana.some(pair => pair.includes(char1) && pair.includes(char2))) {
+                    // Correct match
+                    setTimeout(() => {
+                        card1.style.visibility = 'hidden';
+                        card2.style.visibility = 'hidden';
+                        selectedCards = [];
+                        smiley.style.display = 'block';
+
+                        if (gameBoard.querySelectorAll('.card:not(.selected)').length === 0) {
+                            // All characters matched, end the game
+                            clearInterval(timer);
+                            alert(`Game over! Your score is ${score} points.`);
+                        }
+                    }, 500);
+                } else {
+                    // Incorrect match
+                    setTimeout(() => {
+                        card1.classList.remove('selected');
+                        card2.classList.remove('selected');
+                        selectedCards = [];
+                    }, 500);
+                    score--;
+                    scoreValue.textContent = score;
+                }
+            }
+        }
+
+        function updateTimer() {
+            timeElapsed++;
+            timerValue.textContent = timeElapsed;
+        }
+
+        function showHints() {
+            const cards = gameBoard.querySelectorAll('.card:not(.selected)');
+            const hintCards = [];
+
+            while (hintCards.length < 3 && cards.length > 0) {
+                const randomIndex = Math.floor(Math.random() * cards.length);
+                const card = cards[randomIndex];
+                hintCards.push(card);
+                cards.splice(randomIndex, 1);
+            }
+
+            hintCards.forEach(card => card.classList.add('hint'));
+        }
+
+        hintCheckbox.addEventListener('change', () => {
+            if (hintCheckbox.checked) {
+                showHints();
+            } else {
+                const hintCards = gameBoard.querySelectorAll('.card.hint');
+                hintCards.forEach(card => card.classList.remove('hint'));
+            }
+        });
+
+        resetBtn.addEventListener('click', setupBoard);
+        setupBoard();
+    </script>
+</body>
+</html>

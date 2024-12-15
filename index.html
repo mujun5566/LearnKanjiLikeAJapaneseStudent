@@ -75,6 +75,12 @@
             width: auto;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease;
+        }
+
+        .kanji-card.highlight {
+            background-color: #e8f5e9 !important;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
         }
 
         .kanji-char {
@@ -433,13 +439,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 4px;
+            border-radius: 4px;
         }
 
         .current-grade-kanji span:hover {
-            color: #4CAF50;
-            transform: scale(1.2);
-            background-color: #f0f8f0;
-            border-radius: 4px;
+            background-color: #e8f5e9;
+            transform: scale(1.1);
+        }
+
+        .current-grade-kanji span.active {
+            background-color: #4CAF50;
+            color: white;
         }
 
         /* 汉字卡片高亮动画 */
@@ -563,20 +574,34 @@
             transform: translateY(-2px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+
+        /* 添加徽标样式 */
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 400px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 150px;
+                top: 10px;
+                left: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 添加徽标 -->
+    <img src="mujun-balanced-logo.svg" alt="Logo" class="logo">
+
     <div id="header">
         <h1>Japanese Elementary School Kanji Learning</h1>
         <p>1006 Essential Characters</p>
         <div class="nav-links">
-    <!-- #region       
-             <a href="https://mujun327.github.io/kana-matching-game/" 
-               target="_blank" 
-               class="game-link">
-                Try Kana Matching Game →
-            </a> 
-            --> 
             <a href="kana-matching.html" 
                target="_blank" 
                class="game-link">
@@ -586,7 +611,6 @@
                class="resource-link">
                 Kanji Resources →
             </a>
-         
         </div>
     </div>
 
@@ -750,11 +774,11 @@
         const gojuonMap = {
             'あ': ['あ', 'い', 'う', 'え', 'お'],
             'か': ['か', 'き', 'く', 'け', 'こ'],
-            'さ': ['さ', 'し', 'す', 'せ', 'そ'],
+            'さ': ['さ', '���', 'す', 'せ', 'そ'],
             'た': ['た', 'ち', 'つ', 'て', 'と'],
-            'な': ['���', 'に', 'ぬ', 'ね', 'の'],
+            'な': ['な', 'に', 'ぬ', 'ね', 'の'],
             'は': ['は', 'ひ', 'ふ', 'へ', 'ほ'],
-            'ま': ['ま', 'み', 'む', 'め', 'も'],
+            'ま': ['ま', 'み', 'む', 'め', '��'],
             'や': ['や', 'ゆ', 'よ'],
             'ら': ['ら', 'り', 'る', 'れ', 'ろ'],
             'わ': ['わ', 'を', 'ん']
@@ -777,7 +801,7 @@
                         'ア':'あ', 'イ':'い', 'ウ':'う', 'エ':'え', 'オ':'お',
                         'カ':'か', 'キ':'き', 'ク':'く', 'ケ':'け', 'コ':'こ',
                         'サ':'さ', 'シ':'し', 'ス':'す', 'セ':'せ', 'ソ':'そ',
-                        'タ':'た', 'チ':'ち', 'ツ':'つ', 'テ':'て', 'ト':'と',
+                        'タ':'た', 'チ':'��', 'ツ':'つ', 'テ':'て', 'ト':'と',
                         'ナ':'な', 'ニ':'に', 'ヌ':'ぬ', 'ネ':'ね', 'ノ':'の',
                         'ハ':'は', 'ヒ':'ひ', 'フ':'ふ', 'ヘ':'へ', 'ホ':'ほ',
                         'マ':'ま', 'ミ':'み', 'ム':'む', 'メ':'め', 'モ':'も',
@@ -806,7 +830,7 @@
                 const reading = getKanjiOnReading(data.kanji);
                 if (!reading) return false;
                 
-                // 获取音读的第一个假名
+                // ��取音读的第一个假名
                 const firstKana = reading.charAt(0);
                 return groupKana.some(kana => firstKana === kana);
             });
@@ -875,180 +899,52 @@
         function showCurrentGradeKanji(grade) {
             const panel = document.querySelector('.current-grade-panel');
             const kanjiContainer = panel.querySelector('.current-grade-kanji');
-            const title = panel.querySelector('.current-grade-title');
             
             if (grade === 'all') {
-                panel.classList.remove('visible');
+                panel.style.display = 'none';
                 return;
             }
 
-            // 过滤当前年级的汉字
+            // 获取当前年级的汉字
             const gradeKanji = kanjiData
                 .filter(k => k.grade === parseInt(grade))
                 .map(k => k.kanji);
 
-            // 更新标题
-            title.textContent = `${grade}年生の漢字一覧 (${gradeKanji.length}字)`;
-            
-            // 更新内容
+            // 创建汉字列表
             kanjiContainer.innerHTML = gradeKanji
-                .map(kanji => `<span>${kanji}</span>`)
+                .map(kanji => `<span onclick="scrollToKanji('${kanji}')">${kanji}</span>`)
                 .join('');
-            
+
             // 显示面板
-            panel.classList.add('visible');
+            panel.style.display = 'block';
         }
 
         // 优化滚动到指定汉字的函数
         function scrollToKanji(targetKanji) {
-            console.log('Scrolling to kanji:', targetKanji); // 调试日志
-            
-            // 查找目标汉字卡片
-            const kanjiCards = document.querySelectorAll('.kanji-card');
-            let targetCard = null;
-            
-            for (let card of kanjiCards) {
-                const kanjiChar = card.querySelector('.kanji-char');
-                if (kanjiChar && kanjiChar.textContent.trim() === targetKanji) {
-                    targetCard = card;
+            // 查找包含目标汉字的卡片
+            const cards = document.querySelectorAll('.kanji-card');
+            for (let card of cards) {
+                if (card.querySelector('.kanji-char').textContent.trim() === targetKanji) {
+                    // 滚动到该卡片
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // 添加临时高亮效果
+                    card.style.backgroundColor = '#e8f5e9';
+                    setTimeout(() => {
+                        card.style.backgroundColor = '';
+                    }, 2000);
                     break;
                 }
             }
-
-            if (targetCard) {
-                console.log('Found target card'); // 调试日志
-                
-                // 移除所有卡片的高亮效果
-                kanjiCards.forEach(card => card.classList.remove('highlight'));
-                
-                // 滚动到目标卡片
-                targetCard.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-
-                // 添加高亮效果
-                targetCard.classList.add('highlight');
-                
-                // 2秒后移除高亮效果
-                setTimeout(() => {
-                    targetCard.classList.remove('highlight');
-                }, 2000);
-            } else {
-                console.log('Target card not found'); // 调试日志
-            }
         }
 
-        // 显示指定年级的面板
-        function showGradePanel(grade) {
-            // 隐藏所有面板
-            document.querySelectorAll('.grade-panel').forEach(panel => {
-                panel.classList.remove('visible');
+        // 为年级按钮添加点击事件
+        document.querySelectorAll('.grade-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const grade = btn.dataset.grade;
+                showCurrentGradeKanji(grade);
             });
-            
-            // 显示选中年级的面板
-            const panel = document.querySelector(`.grade${grade}-panel`);
-            if (panel) {
-                const kanjiContainer = panel.querySelector('.kanji-list');
-                
-                // 更新内容
-                kanjiContainer.innerHTML = gradeKanjiData[grade].kanji
-                    .map(kanji => `
-                        <span 
-                            class="kanji-item" 
-                            data-kanji="${kanji}"
-                            role="button"
-                            tabindex="0"
-                        >${kanji}</span>
-                    `)
-                    .join('');
-                
-                // 为每个汉字添加点击和键盘事件
-                kanjiContainer.querySelectorAll('.kanji-item').forEach(span => {
-                    // 点击事件
-                    span.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetKanji = span.dataset.kanji;
-                        
-                        // 移除其他汉字的激活状态
-                        kanjiContainer.querySelectorAll('.kanji-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        
-                        // 添加当前点击汉字的激活状态
-                        span.classList.add('active');
-                        
-                        // 滚动到目标汉字
-                        scrollToKanji(targetKanji);
-                    });
-
-                    // 键盘事件（支持无障碍访问）
-                    span.addEventListener('keypress', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            span.click();
-                        }
-                    });
-                });
-                
-                panel.classList.add('visible');
-            }
-        }
-
-        // 添加或更新样式
-        const additionalStyle = `
-            .kanji-card {
-                transition: background-color 0.3s ease;
-            }
-
-            .kanji-card.highlight {
-                background-color: #e8f5e9 !important;
-                box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-            }
-
-            .kanji-item {
-                cursor: pointer;
-                transition: all 0.2s;
-                width: 28px;
-                height: 28px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 4px;
-                user-select: none;
-                outline: none;
-            }
-
-            .kanji-item:hover,
-            .kanji-item:focus {
-                color: #4CAF50;
-                transform: scale(1.2);
-                background-color: #f0f8f0;
-                z-index: 1;
-            }
-
-            .kanji-item.active {
-                color: white;
-                background-color: #4CAF50;
-                transform: scale(1.1);
-            }
-
-            /* 确保卡片容器有足够的 z-index */
-            .kanji-container {
-                position: relative;
-                z-index: 1;
-            }
-        `;
-
-        // 在初始化函数中添加新样式
-        function initializeGradePanels() {
-            // 添加原有样式
-            const styleSheet = document.createElement('style');
-            styleSheet.textContent = style + additionalStyle;  // 合并样式
-            document.head.appendChild(styleSheet);
-            
-            // ... 其他初始化代码 ...
-        }
+        });
     </script>
 
     <div class="current-grade-panel">

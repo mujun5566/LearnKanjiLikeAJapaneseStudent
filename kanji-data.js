@@ -1,5 +1,5 @@
-     // Basic kanji data
-        // Just the kanjiData array part
+// Basic kanji data
+
 const kanjiData = [
             {
                 kanji: "一",
@@ -8,7 +8,7 @@ const kanjiData = [
                 strokes: 1,
                 grade: 1,
                 session: 1,
-                examples: ["一つ (ひとつ)", "一年 (いちねん)"]
+                examples: ["一つ (ひとつ)", "一年 (いちねん)"],
             },
             {
                 kanji: "右",
@@ -219,7 +219,7 @@ const kanjiData = [
             },
             {
                 kanji: "三",
-                onReading: "���ン",
+                onReading: "サン",
                 kunReading: "みっ-つ",
                 strokes: 3,
                 grade: 1,
@@ -269,7 +269,7 @@ const kanjiData = [
                 strokes: 6,
                 grade: 1,
                 session: 1,
-                examples: ["文字 (もじ)", "���字 (かんじ)"]
+                examples: ["文字 (もじ)", "漢字 (かんじ)"]
             },
             {
                 kanji: "耳",
@@ -309,7 +309,7 @@ const kanjiData = [
             },
             {
                 kanji: "十",
-                onReading: "��ュウ",
+                onReading: "ジュウ",
                 kunReading: "とお",
                 strokes: 2,
                 grade: 1,
@@ -391,7 +391,7 @@ const kanjiData = [
             {
                 kanji: "生",
                 onReading: "セイ",
-                kunReading: "い-きる",
+                kunReading: "い-きる う-まれる は-える",
                 strokes: 5,
                 grade: 1,
                 session: 1,
@@ -620,7 +620,7 @@ const kanjiData = [
                 strokes: 5,
                 grade: 1,
                 session: 1,
-                examples: ["白紙 (はくし)", "白鳥 (はくちょ���)"]
+                examples: ["白紙 (はくし)", "白鳥 (はくちょう)"]
             },
             {
                 kanji: "八",
@@ -660,7 +660,7 @@ const kanjiData = [
             },
             {
                 kanji: "本",
-                onReading: "���ン",
+                onReading: "ホン",
                 kunReading: "もと",
                 strokes: 5,
                 grade: 1,
@@ -726,7 +726,7 @@ const kanjiData = [
             {
                 kanji: "引",
                 onReading: "イン",
-                kunReading: "ひ.く",
+                kunReading: "ひ-く",
                 strokes: 4,
                 grade: 2,
                 session: 1,
@@ -762,7 +762,7 @@ const kanjiData = [
             {
                 kanji: "遠",
                 onReading: "エン",
-                kunReading: "とお.い",
+                kunReading: "とお-い",
                 strokes: 13,
                 grade: 2,
                 session: 1,
@@ -807,7 +807,7 @@ const kanjiData = [
             {
                 kanji: "歌",
                 onReading: "カ",
-                kunReading: "うた、うた.う",
+                kunReading: "うた、うた-う",
                 strokes: 14,
                 grade: 2,
                 session: 1,
@@ -825,7 +825,7 @@ const kanjiData = [
             {
                 kanji: "回",
                 onReading: "カイ、エ",
-                kunReading: "まわ.る、まわ.す",
+                kunReading: "まわ-る、まわ-す",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -834,7 +834,7 @@ const kanjiData = [
             {
                 kanji: "会",
                 onReading: "カイ、エ",
-                kunReading: "あ.う",
+                kunReading: "あ-う",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -861,7 +861,7 @@ const kanjiData = [
             {
                 kanji: "外",
                 onReading: "ガイ、ゲ",
-                kunReading: "そと、ほか、はず.す",
+                kunReading: "そと、ほか、はず-す",
                 strokes: 5,
                 grade: 2,
                 session: 1,
@@ -879,7 +879,7 @@ const kanjiData = [
             {
                 kanji: "楽",
                 onReading: "ガク、ラク",
-                kunReading: "たの.しい",
+                kunReading: "たの-しい",
                 strokes: 13,
                 grade: 2,
                 session: 1,
@@ -906,7 +906,7 @@ const kanjiData = [
             {
                 kanji: "丸",
                 onReading: "ガン",
-                kunReading: "まる、まる.める",
+                kunReading: "まる、まる-める",
                 strokes: 3,
                 grade: 2,
                 session: 1,
@@ -942,7 +942,7 @@ const kanjiData = [
             {
                 kanji: "記",
                 onReading: "キ",
-                kunReading: "しる.す",
+                kunReading: "しる-す",
                 strokes: 10,
                 grade: 2,
                 session: 1,
@@ -951,7 +951,7 @@ const kanjiData = [
             {
                 kanji: "帰",
                 onReading: "キ",
-                kunReading: "かえ.る、かえ.す",
+                kunReading: "かえ-る、かえ-す",
                 strokes: 10,
                 grade: 2,
                 session: 1,
@@ -996,7 +996,7 @@ const kanjiData = [
             {
                 kanji: "強",
                 onReading: "キョウ、ゴウ",
-                kunReading: "つよ.い",
+                kunReading: "つよ-い",
                 strokes: 11,
                 grade: 2,
                 session: 1,
@@ -1005,7 +1005,7 @@ const kanjiData = [
             {
                 kanji: "教",
                 onReading: "キョウ",
-                kunReading: "おし.える",
+                kunReading: "おし-える",
                 strokes: 11,
                 grade: 2,
                 session: 1,
@@ -1014,7 +1014,7 @@ const kanjiData = [
             {
                 kanji: "近",
                 onReading: "キン",
-                kunReading: "ちか.い",
+                kunReading: "ちか-い",
                 strokes: 7,
                 grade: 2,
                 session: 1,
@@ -1041,7 +1041,7 @@ const kanjiData = [
             {
                 kanji: "計",
                 onReading: "ケイ",
-                kunReading: "はか.る",
+                kunReading: "はか-る",
                 strokes: 9,
                 grade: 2,
                 session: 1,
@@ -1059,7 +1059,7 @@ const kanjiData = [
             {
                 kanji: "言",
                 onReading: "ゲン、ゴン",
-                kunReading: "い.う、こと",
+                kunReading: "い-う、こと",
                 strokes: 7,
                 grade: 2,
                 session: 1,
@@ -1086,7 +1086,7 @@ const kanjiData = [
             {
                 kanji: "古",
                 onReading: "コ",
-                kunReading: "ふる.い",
+                kunReading: "ふる-い",
                 strokes: 5,
                 grade: 2,
                 session: 1,
@@ -1104,7 +1104,7 @@ const kanjiData = [
             {
                 kanji: "後",
                 onReading: "ゴ、コウ",
-                kunReading: "のち、うし.ろ、あと",
+                kunReading: "のち、うし-ろ、あと",
                 strokes: 9,
                 grade: 2,
                 session: 1,
@@ -1113,7 +1113,7 @@ const kanjiData = [
             {
                 kanji: "語",
                 onReading: "ゴ",
-                kunReading: "かた.る",
+                kunReading: "かた-る",
                 strokes: 14,
                 grade: 2,
                 session: 1,
@@ -1140,7 +1140,7 @@ const kanjiData = [
             {
                 kanji: "広",
                 onReading: "コウ",
-                kunReading: "ひろ.い、ひろ.がる",
+                kunReading: "ひろ-い、ひろ-がる",
                 strokes: 5,
                 grade: 2,
                 session: 1,
@@ -1149,7 +1149,7 @@ const kanjiData = [
             {
                 kanji: "交",
                 onReading: "コウ",
-                kunReading: "まじ.わる",
+                kunReading: "まじ-わる",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -1158,7 +1158,7 @@ const kanjiData = [
             {
                 kanji: "光",
                 onReading: "コウ",
-                kunReading: "ひか.る",
+                kunReading: "ひか-る",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -1167,7 +1167,7 @@ const kanjiData = [
             {
                 kanji: "考",
                 onReading: "コウ",
-                kunReading: "かんが.える",
+                kunReading: "かんが-える",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -1176,7 +1176,7 @@ const kanjiData = [
             {
                 kanji: "行",
                 onReading: "コウ、ギョウ",
-                kunReading: "い.く、おこな.う",
+                kunReading: "い-く、おこな-う",
                 strokes: 6,
                 grade: 2,
                 session: 1,
@@ -1185,7 +1185,7 @@ const kanjiData = [
             {
                 kanji: "高",
                 onReading: "コウ",
-                kunReading: "たか.い",
+                kunReading: "たか-い",
                 strokes: 10,
                 grade: 2,
                 session: 1,
@@ -1203,7 +1203,7 @@ const kanjiData = [
             {
                 kanji: "合",
                 onReading: "ゴウ、ガッ",
-                kunReading: "あ.う、あ.わせる",
+                kunReading: "あ-う、あ-わせる",
                 strokes: 6,
                 grade: 2,
                 session: 2,
@@ -1230,7 +1230,7 @@ const kanjiData = [
             {
                 kanji: "黒",
                 onReading: "コク",
-                kunReading: "くろ.い",
+                kunReading: "くろ-い",
                 strokes: 11,
                 grade: 2,
                 session: 2,
@@ -1257,7 +1257,7 @@ const kanjiData = [
             {
                 kanji: "細",
                 onReading: "サイ",
-                kunReading: "ほそ.い",
+                kunReading: "ほそ-い",
                 strokes: 11,
                 grade: 2,
                 session: 2,
@@ -1266,7 +1266,7 @@ const kanjiData = [
             {
                 kanji: "作",
                 onReading: "サク、サ",
-                kunReading: "つく.る",
+                kunReading: "つく-る",
                 strokes: 7,
                 grade: 2,
                 session: 2,
@@ -1284,7 +1284,7 @@ const kanjiData = [
             {
                 kanji: "止",
                 onReading: "シ",
-                kunReading: "と.まる、と.める",
+                kunReading: "と-まる、と-める",
                 strokes: 4,
                 grade: 2,
                 session: 2,
@@ -1320,7 +1320,7 @@ const kanjiData = [
             {
                 kanji: "思",
                 onReading: "シ",
-                kunReading: "おも.う",
+                kunReading: "おも-う",
                 strokes: 9,
                 grade: 2,
                 session: 2,
@@ -1347,7 +1347,7 @@ const kanjiData = [
             {
                 kanji: "自",
                 onReading: "ジ、シ",
-                kunReading: "みずか.ら",
+                kunReading: "みずか-ら",
                 strokes: 6,
                 grade: 2,
                 session: 2,
@@ -1383,7 +1383,7 @@ const kanjiData = [
             {
                 kanji: "弱",
                 onReading: "ジャク",
-                kunReading: "よわ.い",
+                kunReading: "よわ-い",
                 strokes: 10,
                 grade: 2,
                 session: 2,
@@ -1428,7 +1428,7 @@ const kanjiData = [
             {
                 kanji: "書",
                 onReading: "ショ",
-                kunReading: "か.く",
+                kunReading: "か-く",
                 strokes: 10,
                 grade: 2,
                 session: 2,
@@ -1437,7 +1437,7 @@ const kanjiData = [
             {
                 kanji: "少",
                 onReading: "ショウ",
-                kunReading: "すく.ない、すこ.し",
+                kunReading: "すく-ない、すこ-し",
                 strokes: 4,
                 grade: 2,
                 session: 2,
@@ -1464,7 +1464,7 @@ const kanjiData = [
             {
                 kanji: "食",
                 onReading: "ショク、ジキ",
-                kunReading: "た.べる",
+                kunReading: "た-べる",
                 strokes: 9,
                 grade: 2,
                 session: 2,
@@ -1482,7 +1482,7 @@ const kanjiData = [
             {
                 kanji: "新",
                 onReading: "シン",
-                kunReading: "あたら.しい",
+                kunReading: "あたら-しい",
                 strokes: 13,
                 grade: 2,
                 session: 2,
@@ -1491,7 +1491,7 @@ const kanjiData = [
             {
                 kanji: "親",
                 onReading: "シン",
-                kunReading: "おや、した.しい",
+                kunReading: "おや、した-しい",
                 strokes: 16,
                 grade: 2,
                 session: 2,
@@ -1500,7 +1500,7 @@ const kanjiData = [
             {
                 kanji: "図",
                 onReading: "ズ、ト",
-                kunReading: "はか.る",
+                kunReading: "はか-る",
                 strokes: 7,
                 grade: 2,
                 session: 2,
@@ -1509,7 +1509,7 @@ const kanjiData = [
             {
                 kanji: "数",
                 onReading: "スウ、ス",
-                kunReading: "かず、かぞ.える",
+                kunReading: "かず、かぞ-える",
                 strokes: 13,
                 grade: 2,
                 session: 2,
@@ -1545,7 +1545,7 @@ const kanjiData = [
             {
                 kanji: "晴",
                 onReading: "セイ",
-                kunReading: "は.れる",
+                kunReading: "は-れる",
                 strokes: 12,
                 grade: 2,
                 session: 2,
@@ -1554,7 +1554,7 @@ const kanjiData = [
             {
                 kanji: "切",
                 onReading: "セツ、サイ",
-                kunReading: "き.る、き.れる",
+                kunReading: "き-る、き-れる",
                 strokes: 4,
                 grade: 2,
                 session: 2,
@@ -1599,7 +1599,7 @@ const kanjiData = [
             {
                 kanji: "組",
                 onReading: "ソ",
-                kunReading: "く.む",
+                kunReading: "く-む",
                 strokes: 11,
                 grade: 2,
                 session: 2,
@@ -1608,7 +1608,7 @@ const kanjiData = [
             {
                 kanji: "走",
                 onReading: "ソウ",
-                kunReading: "はし.る",
+                kunReading: "はし-る",
                 strokes: 7,
                 grade: 2,
                 session: 2,
@@ -1617,7 +1617,7 @@ const kanjiData = [
             {
                 kanji: "多",
                 onReading: "タ",
-                kunReading: "おお.い",
+                kunReading: "おお-い",
                 strokes: 6,
                 grade: 2,
                 session: 2,
@@ -1626,7 +1626,7 @@ const kanjiData = [
             {
                 kanji: "太",
                 onReading: "タイ、タ",
-                kunReading: "ふと.い",
+                kunReading: "ふと-い",
                 strokes: 4,
                 grade: 2,
                 session: 2,
@@ -1671,7 +1671,7 @@ const kanjiData = [
             {
                 kanji: "知",
                 onReading: "チ",
-                kunReading: "し.る",
+                kunReading: "し-る",
                 strokes: 8,
                 grade: 2,
                 session: 3,
@@ -1698,7 +1698,7 @@ const kanjiData = [
             {
                 kanji: "長",
                 onReading: "チョウ",
-                kunReading: "なが.い",
+                kunReading: "なが-い",
                 strokes: 8,
                 grade: 2,
                 session: 3,
@@ -1725,7 +1725,7 @@ const kanjiData = [
             {
                 kanji: "直",
                 onReading: "チョク、ジキ",
-                kunReading: "なお.す、なお.る",
+                kunReading: "なお-す、なお-る",
                 strokes: 8,
                 grade: 2,
                 session: 3,
@@ -1734,7 +1734,7 @@ const kanjiData = [
             {
                 kanji: "通",
                 onReading: "ツウ、ツ",
-                kunReading: "とお.る、かよ.う",
+                kunReading: "とお-る、かよ-う",
                 strokes: 10,
                 grade: 2,
                 session: 3,
@@ -1797,7 +1797,7 @@ const kanjiData = [
             {
                 kanji: "当",
                 onReading: "トウ",
-                kunReading: "あ.たる",
+                kunReading: "あ-たる",
                 strokes: 6,
                 grade: 2,
                 session: 3,
@@ -1815,7 +1815,7 @@ const kanjiData = [
             {
                 kanji: "答",
                 onReading: "トウ",
-                kunReading: "こた.える",
+                kunReading: "こた-える",
                 strokes: 12,
                 grade: 2,
                 session: 3,
@@ -1833,7 +1833,7 @@ const kanjiData = [
             {
                 kanji: "同",
                 onReading: "ドウ",
-                kunReading: "おな.じ",
+                kunReading: "おな-じ",
                 strokes: 6,
                 grade: 2,
                 session: 3,
@@ -1851,7 +1851,7 @@ const kanjiData = [
             {
                 kanji: "読",
                 onReading: "ドク、トク",
-                kunReading: "よ.む",
+                kunReading: "よ-む",
                 strokes: 14,
                 grade: 2,
                 session: 3,
@@ -1896,7 +1896,7 @@ const kanjiData = [
             {
                 kanji: "売",
                 onReading: "バイ",
-                kunReading: "う.る、う.れる",
+                kunReading: "う-る、う-れる",
                 strokes: 7,
                 grade: 2,
                 session: 4,
@@ -1905,7 +1905,7 @@ const kanjiData = [
             {
                 kanji: "買",
                 onReading: "バイ",
-                kunReading: "か.う",
+                kunReading: "か-う",
                 strokes: 12,
                 grade: 2,
                 session: 4,
@@ -1923,7 +1923,7 @@ const kanjiData = [
             {
                 kanji: "半",
                 onReading: "ハン",
-                kunReading: "なか.ば",
+                kunReading: "なか-ば",
                 strokes: 5,
                 grade: 2,
                 session: 4,
@@ -1959,7 +1959,7 @@ const kanjiData = [
             {
                 kanji: "分",
                 onReading: "ブン、フン、ブ",
-                kunReading: "わ.ける、わ.かる",
+                kunReading: "わ-ける、わ-かる",
                 strokes: 4,
                 grade: 2,
                 session: 4,
@@ -1968,7 +1968,7 @@ const kanjiData = [
             {
                 kanji: "聞",
                 onReading: "ブン、モン",
-                kunReading: "き.く、き.こえる",
+                kunReading: "き-く、き-こえる",
                 strokes: 14,
                 grade: 2,
                 session: 4,
@@ -2406,7 +2406,7 @@ const kanjiData = [
 {
     kanji: "血",
     onReading: "ケツ",
-    kunReading: "��",
+    kunReading: "ち",
     strokes: 6,
     grade: 3,
     session: 2,
@@ -3121,7 +3121,7 @@ const kanjiData = [
     strokes: 2,
     grade: 3,
     session: 1,
-    examples: ["丁寧 (ていねい)", "丁目 (ちょう���)"]
+    examples: ["丁寧 (ていねい)", "丁目 (ちょうめ)"]
 },
 {
     kanji: "帳",
@@ -3481,7 +3481,7 @@ const kanjiData = [
     strokes: 8,
     grade: 3,
     session: 2,
-    examples: ["服装 (ふくそう)", "洋服 (��うふく)"]
+    examples: ["服装 (ふくそう)", "洋服 (ようふく)"]
 },
 {
     kanji: "福",
@@ -3778,7 +3778,7 @@ const kanjiData = [
 {
     kanji: "愛",
     onReading: "アイ",
-    kunReading: "いと.しい",
+    kunReading: "いと-しい",
     strokes: 13,
     grade: 4,
     session: 1,
@@ -3796,7 +3796,7 @@ const kanjiData = [
 {
     kanji: "以",
     onReading: "イ",
-    kunReading: "もっ.て",
+    kunReading: "もっ-て",
     strokes: 5,
     grade: 4,
     session: 1,
@@ -3823,7 +3823,7 @@ const kanjiData = [
 {
     kanji: "囲",
     onReading: "イ",
-    kunReading: "かこ.む",
+    kunReading: "かこ-む",
     strokes: 7,
     grade: 4,
     session: 1,
@@ -3859,7 +3859,7 @@ const kanjiData = [
 {
     kanji: "栄",
     onReading: "エイ",
-    kunReading: "さか.える",
+    kunReading: "さか-える",
     strokes: 9,
     grade: 4,
     session: 1,
@@ -3886,7 +3886,7 @@ const kanjiData = [
 {
     kanji: "加",
     onReading: "カ",
-    kunReading: "くわ.える",
+    kunReading: "くわ-える",
     strokes: 5,
     grade: 4,
     session: 1,
@@ -3895,7 +3895,7 @@ const kanjiData = [
 {
     kanji: "果",
     onReading: "カ",
-    kunReading: "は.たす",
+    kunReading: "は-たす",
     strokes: 8,
     grade: 4,
     session: 1,
@@ -3931,7 +3931,7 @@ const kanjiData = [
 {
     kanji: "改",
     onReading: "カイ",
-    kunReading: "あらた.める",
+    kunReading: "あらた-める",
     strokes: 7,
     grade: 4,
     session: 1,
@@ -3976,7 +3976,7 @@ const kanjiData = [
 {
     kanji: "覚",
     onReading: "カク",
-    kunReading: "おぼ.える",
+    kunReading: "おぼ-える",
     strokes: 12,
     grade: 4,
     session: 1,
@@ -4012,7 +4012,7 @@ const kanjiData = [
 {
     kanji: "関",
     onReading: "カン",
-    kunReading: "せき、かか.わる",
+    kunReading: "せき、かか-わる",
     strokes: 14,
     grade: 4,
     session: 1,
@@ -4030,7 +4030,7 @@ const kanjiData = [
 {
     kanji: "願",
     onReading: "ガン",
-    kunReading: "ねが.う",
+    kunReading: "ねが-う",
     strokes: 19,
     grade: 4,
     session: 1,
@@ -4066,7 +4066,7 @@ const kanjiData = [
 {
     kanji: "喜",
     onReading: "キ",
-    kunReading: "よろこ.ぶ",
+    kunReading: "よろこ-ぶ",
     strokes: 12,
     grade: 4,
     session: 1,
@@ -4111,7 +4111,7 @@ const kanjiData = [
 {
     kanji: "求",
     onReading: "キュウ",
-    kunReading: "もと.める",
+    kunReading: "もと-める",
     strokes: 7,
     grade: 4,
     session: 1,
@@ -4120,7 +4120,7 @@ const kanjiData = [
 {
     kanji: "泣",
     onReading: "キュウ",
-    kunReading: "な.く",
+    kunReading: "な-く",
     strokes: 8,
     grade: 4,
     session: 1,
@@ -4129,7 +4129,7 @@ const kanjiData = [
 {
     kanji: "救",
     onReading: "キュウ",
-    kunReading: "すく.う",
+    kunReading: "すく-う",
     strokes: 11,
     grade: 4,
     session: 1,
@@ -4147,7 +4147,7 @@ const kanjiData = [
 {
     kanji: "挙",
     onReading: "キョ",
-    kunReading: "あ.げる",
+    kunReading: "あ-げる",
     strokes: 10,
     grade: 4,
     session: 1,
@@ -4192,7 +4192,7 @@ const kanjiData = [
 {
     kanji: "競",
     onReading: "キョウ、ケイ",
-    kunReading: "きそ.う",
+    kunReading: "きそ-う",
     strokes: 20,
     grade: 4,
     session: 1,
@@ -4201,7 +4201,7 @@ const kanjiData = [
 {
     kanji: "極",
     onReading: "キョク、ゴク",
-    kunReading: "きわ.める",
+    kunReading: "きわ-める",
     strokes: 12,
     grade: 4,
     session: 1,
@@ -4267,7 +4267,7 @@ const kanjiData = [
     {
         kanji: "欠",
         onReading: "ケツ",
-        kunReading: "か.ける",
+        kunReading: "か-ける",
         strokes: 4,
         grade: 4,
         session: 2,
@@ -4276,7 +4276,7 @@ const kanjiData = [
     {
         kanji: "結",
         onReading: "ケツ",
-        kunReading: "むす.ぶ",
+        kunReading: "むす-ぶ",
         strokes: 12,
         grade: 4,
         session: 2,
@@ -4285,7 +4285,7 @@ const kanjiData = [
     {
         kanji: "建",
         onReading: "ケン",
-        kunReading: "た.てる",
+        kunReading: "た-てる",
         strokes: 9,
         grade: 4,
         session: 2,
@@ -4312,7 +4312,7 @@ const kanjiData = [
     {
         kanji: "固",
         onReading: "コ",
-        kunReading: "かた.い",
+        kunReading: "かた-い",
         strokes: 8,
         grade: 4,
         session: 2,
@@ -4330,7 +4330,7 @@ const kanjiData = [
     {
         kanji: "好",
         onReading: "コウ",
-        kunReading: "す.き、この.む",
+        kunReading: "す-き、この-む",
         strokes: 6,
         grade: 4,
         session: 2,
@@ -4366,7 +4366,7 @@ const kanjiData = [
     {
         kanji: "告",
         onReading: "コク",
-        kunReading: "つ.げる",
+        kunReading: "つ-げる",
         strokes: 7,
         grade: 4,
         session: 2,
@@ -4375,7 +4375,7 @@ const kanjiData = [
     {
         kanji: "差",
         onReading: "サ",
-        kunReading: "さ.す",
+        kunReading: "さ-す",
         strokes: 10,
         grade: 4,
         session: 2,
@@ -4393,7 +4393,7 @@ const kanjiData = [
     {
         kanji: "最",
         onReading: "サイ",
-        kunReading: "もっと.も",
+        kunReading: "もっと-も",
         strokes: 12,
         grade: 4,
         session: 2,
@@ -4429,7 +4429,7 @@ const kanjiData = [
     {
         kanji: "刷",
         onReading: "サツ",
-        kunReading: "す.る",
+        kunReading: "す-る",
         strokes: 8,
         grade: 4,
         session: 2,
@@ -4438,7 +4438,7 @@ const kanjiData = [
     {
         kanji: "殺",
         onReading: "サツ、セツ",
-        kunReading: "ころ.す",
+        kunReading: "ころ-す",
         strokes: 11,
         grade: 4,
         session: 2,
@@ -4456,7 +4456,7 @@ const kanjiData = [
     {
         kanji: "参",
         onReading: "サン",
-        kunReading: "まい.る",
+        kunReading: "まい-る",
         strokes: 8,
         grade: 4,
         session: 2,
@@ -4465,7 +4465,7 @@ const kanjiData = [
     {
         kanji: "産",
         onReading: "サン",
-        kunReading: "う.む",
+        kunReading: "う-む",
         strokes: 11,
         grade: 4,
         session: 2,
@@ -4474,7 +4474,7 @@ const kanjiData = [
     {
         kanji: "散",
         onReading: "サン",
-        kunReading: "ち.る",
+        kunReading: "ち-る",
         strokes: 12,
         grade: 4,
         session: 2,
@@ -4483,7 +4483,7 @@ const kanjiData = [
     {
         kanji: "残",
         onReading: "ザン",
-        kunReading: "のこ.る",
+        kunReading: "のこ-る",
         strokes: 10,
         grade: 4,
         session: 2,
@@ -4528,7 +4528,7 @@ const kanjiData = [
     {
         kanji: "試",
         onReading: "シ",
-        kunReading: "こころ.みる",
+        kunReading: "こころ-みる",
         strokes: 13,
         grade: 4,
         session: 2,
@@ -4546,7 +4546,7 @@ const kanjiData = [
     {
         kanji: "治",
         onReading: "ジ、チ",
-        kunReading: "なお.る",
+        kunReading: "なお-る",
         strokes: 8,
         grade: 4,
         session: 2,
@@ -4555,7 +4555,7 @@ const kanjiData = [
     {
         kanji: "辞",
         onReading: "ジ",
-        kunReading: "や.める",
+        kunReading: "や-める",
         strokes: 13,
         grade: 4,
         session: 2,
@@ -4564,7 +4564,7 @@ const kanjiData = [
     {
         kanji: "失",
         onReading: "シツ",
-        kunReading: "うしな.う",
+        kunReading: "うしな-う",
         strokes: 5,
         grade: 4,
         session: 2,
@@ -4573,7 +4573,7 @@ const kanjiData = [
     {
         kanji: "借",
         onReading: "シャク",
-        kunReading: "か.りる",
+        kunReading: "か-りる",
         strokes: 10,
         grade: 4,
         session: 2,
@@ -4591,7 +4591,7 @@ const kanjiData = [
     {
         kanji: "周",
         onReading: "シュウ",
-        kunReading: "まわ.り",
+        kunReading: "まわ-り",
         strokes: 8,
         grade: 4,
         session: 2,
@@ -4600,7 +4600,7 @@ const kanjiData = [
     {
         kanji: "祝",
         onReading: "シュク",
-        kunReading: "いわ.う",
+        kunReading: "いわ-う",
         strokes: 9,
         grade: 4,
         session: 2,
@@ -4618,7 +4618,7 @@ const kanjiData = [
     {
         kanji: "初",
         onReading: "ショ",
-        kunReading: "はじ.め",
+        kunReading: "はじ-め",
         strokes: 7,
         grade: 4,
         session: 2,
@@ -4636,7 +4636,7 @@ const kanjiData = [
     {
         kanji: "笑",
         onReading: "ショウ",
-        kunReading: "わら.う",
+        kunReading: "わら-う",
         strokes: 10,
         grade: 4,
         session: 2,
@@ -4645,7 +4645,7 @@ const kanjiData = [
     {
         kanji: "唱",
         onReading: "ショウ",
-        kunReading: "とな.える",
+        kunReading: "とな-える",
         strokes: 11,
         grade: 4,
         session: 2,
@@ -4654,7 +4654,7 @@ const kanjiData = [
     {
         kanji: "焼",
         onReading: "ショウ",
-        kunReading: "や.く",
+        kunReading: "や-く",
         strokes: 12,
         grade: 4,
         session: 2,
@@ -4663,7 +4663,7 @@ const kanjiData = [
     {
         kanji: "照",
         onReading: "ショウ",
-        kunReading: "て.る",
+        kunReading: "て-る",
         strokes: 13,
         grade: 4,
         session: 2,
@@ -4708,7 +4708,7 @@ const kanjiData = [
     {
         kanji: "成",
         onReading: "セイ",
-        kunReading: "な.る",
+        kunReading: "な-る",
         strokes: 6,
         grade: 4,
         session: 2,
@@ -4717,7 +4717,7 @@ const kanjiData = [
     {
         kanji: "省",
         onReading: "セイ、ショウ",
-        kunReading: "かえり.みる",
+        kunReading: "かえり-みる",
         strokes: 9,
         grade: 4,
         session: 2,
@@ -4726,7 +4726,7 @@ const kanjiData = [
     {
         kanji: "清",
         onReading: "セイ、ショウ",
-        kunReading: "きよ.い",
+        kunReading: "きよ-い",
         strokes: 11,
         grade: 4,
         session: 2,
@@ -4736,7 +4736,7 @@ const kanjiData = [
         {
             kanji: "静",
             onReading: "セイ、ジョウ",
-            kunReading: "しず.か",
+            kunReading: "しず-か",
             strokes: 14,
             grade: 4,
             session: 3,
@@ -4754,7 +4754,7 @@ const kanjiData = [
         {
             kanji: "積",
             onReading: "セキ",
-            kunReading: "つ.む",
+            kunReading: "つ-む",
             strokes: 16,
             grade: 4,
             session: 3,
@@ -4763,7 +4763,7 @@ const kanjiData = [
         {
             kanji: "折",
             onReading: "セツ",
-            kunReading: "お.る",
+            kunReading: "お-る",
             strokes: 7,
             grade: 4,
             session: 3,
@@ -4781,7 +4781,7 @@ const kanjiData = [
         {
             kanji: "説",
             onReading: "セツ",
-            kunReading: "と.く",
+            kunReading: "と-く",
             strokes: 14,
             grade: 4,
             session: 3,
@@ -4790,7 +4790,7 @@ const kanjiData = [
         {
             kanji: "浅",
             onReading: "セン",
-            kunReading: "あさ.い",
+            kunReading: "あさ-い",
             strokes: 9,
             grade: 4,
             session: 3,
@@ -4799,7 +4799,7 @@ const kanjiData = [
         {
             kanji: "戦",
             onReading: "セン",
-            kunReading: "いくさ、たたか.う",
+            kunReading: "いくさ、たたか-う",
             strokes: 13,
             grade: 4,
             session: 3,
@@ -4808,7 +4808,7 @@ const kanjiData = [
         {
             kanji: "選",
             onReading: "セン",
-            kunReading: "えら.ぶ",
+            kunReading: "えら-ぶ",
             strokes: 15,
             grade: 4,
             session: 3,
@@ -4826,7 +4826,7 @@ const kanjiData = [
         {
             kanji: "争",
             onReading: "ソウ",
-            kunReading: "あらそ.う",
+            kunReading: "あらそ-う",
             strokes: 6,
             grade: 4,
             session: 3,
@@ -4871,7 +4871,7 @@ const kanjiData = [
         {
             kanji: "続",
             onReading: "ゾク",
-            kunReading: "つづ.く",
+            kunReading: "つづ-く",
             strokes: 13,
             grade: 4,
             session: 3,
@@ -4898,7 +4898,7 @@ const kanjiData = [
         {
             kanji: "帯",
             onReading: "タイ",
-            kunReading: "お.びる",
+            kunReading: "お-びる",
             strokes: 10,
             grade: 4,
             session: 3,
@@ -4934,7 +4934,7 @@ const kanjiData = [
         {
             kanji: "置",
             onReading: "チ",
-            kunReading: "お.く",
+            kunReading: "お-く",
             strokes: 13,
             grade: 4,
             session: 3,
@@ -4961,7 +4961,7 @@ const kanjiData = [
         {
             kanji: "兆",
             onReading: "チョウ",
-            kunReading: "きざ.す",
+            kunReading: "きざ-す",
             strokes: 6,
             grade: 4,
             session: 3,
@@ -4979,7 +4979,7 @@ const kanjiData = [
         {
             kanji: "低",
             onReading: "テイ",
-            kunReading: "ひく.い",
+            kunReading: "ひく-い",
             strokes: 7,
             grade: 4,
             session: 3,
@@ -4997,7 +4997,7 @@ const kanjiData = [
         {
             kanji: "停",
             onReading: "テイ",
-            kunReading: "と.める",
+            kunReading: "と-める",
             strokes: 11,
             grade: 4,
             session: 3,
@@ -5024,7 +5024,7 @@ const kanjiData = [
         {
             kanji: "伝",
             onReading: "デン",
-            kunReading: "つた.える",
+            kunReading: "つた-える",
             strokes: 6,
             grade: 4,
             session: 3,
@@ -5042,7 +5042,7 @@ const kanjiData = [
         {
             kanji: "努",
             onReading: "ド",
-            kunReading: "つと.める",
+            kunReading: "つと-める",
             strokes: 7,
             grade: 4,
             session: 3,
@@ -5069,7 +5069,7 @@ const kanjiData = [
         {
             kanji: "働",
             onReading: "ドウ",
-            kunReading: "はたら.く",
+            kunReading: "はたら-く",
             strokes: 13,
             grade: 4,
             session: 3,
@@ -5087,7 +5087,7 @@ const kanjiData = [
         {
             kanji: "得",
             onReading: "トク",
-            kunReading: "え.る",
+            kunReading: "え-る",
             strokes: 11,
             grade: 4,
             session: 3,
@@ -5105,7 +5105,7 @@ const kanjiData = [
         {
             kanji: "熱",
             onReading: "ネツ",
-            kunReading: "あつ.い",
+            kunReading: "あつ-い",
             strokes: 15,
             grade: 4,
             session: 3,
@@ -5123,7 +5123,7 @@ const kanjiData = [
         {
             kanji: "敗",
             onReading: "ハイ",
-            kunReading: "やぶ.れる",
+            kunReading: "やぶ-れる",
             strokes: 11,
             grade: 4,
             session: 3,
@@ -5159,7 +5159,7 @@ const kanjiData = [
         {
             kanji: "飛",
             onReading: "ヒ",
-            kunReading: "と.ぶ",
+            kunReading: "と-ぶ",
             strokes: 9,
             grade: 4,
             session: 3,
@@ -5168,7 +5168,7 @@ const kanjiData = [
         {
             kanji: "費",
             onReading: "ヒ",
-            kunReading: "つい.やす",
+            kunReading: "つい-やす",
             strokes: 12,
             grade: 4,
             session: 3,
@@ -5177,7 +5177,7 @@ const kanjiData = [
         {
             kanji: "必",
             onReading: "ヒツ",
-            kunReading: "かなら.ず",
+            kunReading: "かなら-ず",
             strokes: 5,
             grade: 4,
             session: 3,
@@ -5204,7 +5204,7 @@ const kanjiData = [
 {
     kanji: "静",
     onReading: "セイ、ジョウ",
-    kunReading: "しず.か",
+    kunReading: "しず-か",
     strokes: 14,
     grade: 4,
     session: 3,
@@ -5222,7 +5222,7 @@ const kanjiData = [
 {
     kanji: "積",
     onReading: "セキ",
-    kunReading: "つ.む",
+    kunReading: "つ-む",
     strokes: 16,
     grade: 4,
     session: 3,
@@ -5231,7 +5231,7 @@ const kanjiData = [
 {
     kanji: "折",
     onReading: "セツ",
-    kunReading: "お.る",
+    kunReading: "お-る",
     strokes: 7,
     grade: 4,
     session: 3,
@@ -5249,7 +5249,7 @@ const kanjiData = [
 {
     kanji: "説",
     onReading: "セツ",
-    kunReading: "と.く",
+    kunReading: "と-く",
     strokes: 14,
     grade: 4,
     session: 3,
@@ -5258,7 +5258,7 @@ const kanjiData = [
 {
     kanji: "浅",
     onReading: "セン",
-    kunReading: "あさ.い",
+    kunReading: "あさ-い",
     strokes: 9,
     grade: 4,
     session: 3,
@@ -5267,7 +5267,7 @@ const kanjiData = [
 {
     kanji: "戦",
     onReading: "セン",
-    kunReading: "いくさ、たたか.う",
+    kunReading: "いくさ、たたか-う",
     strokes: 13,
     grade: 4,
     session: 3,
@@ -5276,7 +5276,7 @@ const kanjiData = [
 {
     kanji: "選",
     onReading: "セン",
-    kunReading: "えら.ぶ",
+    kunReading: "えら-ぶ",
     strokes: 15,
     grade: 4,
     session: 3,
@@ -5294,7 +5294,7 @@ const kanjiData = [
 {
     kanji: "争",
     onReading: "ソウ",
-    kunReading: "あらそ.う",
+    kunReading: "あらそ-う",
     strokes: 6,
     grade: 4,
     session: 3,
@@ -5339,7 +5339,7 @@ const kanjiData = [
 {
     kanji: "続",
     onReading: "ゾク",
-    kunReading: "つづ.く",
+    kunReading: "つづ-く",
     strokes: 13,
     grade: 4,
     session: 3,
@@ -5366,7 +5366,7 @@ const kanjiData = [
 {
     kanji: "帯",
     onReading: "タイ",
-    kunReading: "お.びる",
+    kunReading: "お-びる",
     strokes: 10,
     grade: 4,
     session: 3,
@@ -5402,7 +5402,7 @@ const kanjiData = [
 {
     kanji: "置",
     onReading: "チ",
-    kunReading: "お.く",
+    kunReading: "お-く",
     strokes: 13,
     grade: 4,
     session: 3,
@@ -5429,7 +5429,7 @@ const kanjiData = [
 {
     kanji: "兆",
     onReading: "チョウ",
-    kunReading: "きざ.す",
+    kunReading: "きざ-す",
     strokes: 6,
     grade: 4,
     session: 3,
@@ -5447,7 +5447,7 @@ const kanjiData = [
 {
     kanji: "低",
     onReading: "テイ",
-    kunReading: "ひく.い",
+    kunReading: "ひく-い",
     strokes: 7,
     grade: 4,
     session: 3,
@@ -5465,7 +5465,7 @@ const kanjiData = [
 {
     kanji: "停",
     onReading: "テイ",
-    kunReading: "と.める",
+    kunReading: "と-める",
     strokes: 11,
     grade: 4,
     session: 3,
@@ -5492,7 +5492,7 @@ const kanjiData = [
 {
     kanji: "伝",
     onReading: "デン",
-    kunReading: "つた.える",
+    kunReading: "つた-える",
     strokes: 6,
     grade: 4,
     session: 3,
@@ -5510,7 +5510,7 @@ const kanjiData = [
 {
     kanji: "努",
     onReading: "ド",
-    kunReading: "つと.める",
+    kunReading: "つと-める",
     strokes: 7,
     grade: 4,
     session: 3,
@@ -5537,7 +5537,7 @@ const kanjiData = [
 {
     kanji: "働",
     onReading: "ドウ",
-    kunReading: "はたら.く",
+    kunReading: "はたら-く",
     strokes: 13,
     grade: 4,
     session: 3,
@@ -5555,7 +5555,7 @@ const kanjiData = [
 {
     kanji: "得",
     onReading: "トク",
-    kunReading: "え.る",
+    kunReading: "え-る",
     strokes: 11,
     grade: 4,
     session: 3,
@@ -5573,7 +5573,7 @@ const kanjiData = [
 {
     kanji: "熱",
     onReading: "ネツ",
-    kunReading: "あつ.い",
+    kunReading: "あつ-い",
     strokes: 15,
     grade: 4,
     session: 3,
@@ -5591,7 +5591,7 @@ const kanjiData = [
 {
     kanji: "敗",
     onReading: "ハイ",
-    kunReading: "やぶ.れる",
+    kunReading: "やぶ-れる",
     strokes: 11,
     grade: 4,
     session: 3,
@@ -5627,7 +5627,7 @@ const kanjiData = [
 {
     kanji: "飛",
     onReading: "ヒ",
-    kunReading: "と.ぶ",
+    kunReading: "と-ぶ",
     strokes: 9,
     grade: 4,
     session: 3,
@@ -5636,7 +5636,7 @@ const kanjiData = [
 {
     kanji: "費",
     onReading: "ヒ",
-    kunReading: "つい.やす",
+    kunReading: "つい-やす",
     strokes: 12,
     grade: 4,
     session: 3,
@@ -5645,7 +5645,7 @@ const kanjiData = [
 {
     kanji: "必",
     onReading: "ヒツ",
-    kunReading: "かなら.ず",
+    kunReading: "かなら-ず",
     strokes: 5,
     grade: 4,
     session: 3,
@@ -5690,7 +5690,7 @@ const kanjiData = [
     {
         kanji: "付",
         onReading: "フ",
-        kunReading: "つ.ける",
+        kunReading: "つ-ける",
         strokes: 5,
         grade: 4,
         session: 4,
@@ -5735,7 +5735,7 @@ const kanjiData = [
     {
         kanji: "別",
         onReading: "ベツ",
-        kunReading: "わか.れる",
+        kunReading: "わか-れる",
         strokes: 7,
         grade: 4,
         session: 4,
@@ -5744,7 +5744,7 @@ const kanjiData = [
     {
         kanji: "辺",
         onReading: "ヘン",
-        kunReading: "あた.り",
+        kunReading: "あた-り",
         strokes: 5,
         grade: 4,
         session: 4,
@@ -5753,7 +5753,7 @@ const kanjiData = [
     {
         kanji: "変",
         onReading: "ヘン",
-        kunReading: "か.わる",
+        kunReading: "か-わる",
         strokes: 9,
         grade: 4,
         session: 4,
@@ -5762,7 +5762,7 @@ const kanjiData = [
     {
         kanji: "便",
         onReading: "ベン、ビン",
-        kunReading: "たよ.り",
+        kunReading: "たよ-り",
         strokes: 9,
         grade: 4,
         session: 4,
@@ -5771,7 +5771,7 @@ const kanjiData = [
     {
         kanji: "包",
         onReading: "ホウ",
-        kunReading: "つつ.む",
+        kunReading: "つつ-む",
         strokes: 5,
         grade: 4,
         session: 4,
@@ -5789,7 +5789,7 @@ const kanjiData = [
     {
         kanji: "望",
         onReading: "ボウ、モウ",
-        kunReading: "のぞ.む",
+        kunReading: "のぞ-む",
         strokes: 11,
         grade: 4,
         session: 4,
@@ -5816,7 +5816,7 @@ const kanjiData = [
     {
         kanji: "満",
         onReading: "マン",
-        kunReading: "み.ちる",
+        kunReading: "み-ちる",
         strokes: 12,
         grade: 4,
         session: 4,
@@ -5825,7 +5825,7 @@ const kanjiData = [
     {
         kanji: "未",
         onReading: "ミ",
-        kunReading: "いま.だ",
+        kunReading: "いま-だ",
         strokes: 5,
         grade: 4,
         session: 4,
@@ -5852,7 +5852,7 @@ const kanjiData = [
     {
         kanji: "無",
         onReading: "ム、ブ",
-        kunReading: "な.い",
+        kunReading: "な-い",
         strokes: 12,
         grade: 4,
         session: 4,
@@ -5870,7 +5870,7 @@ const kanjiData = [
     {
         kanji: "勇",
         onReading: "ユウ",
-        kunReading: "いさ.む",
+        kunReading: "いさ-む",
         strokes: 9,
         grade: 4,
         session: 4,
@@ -5879,7 +5879,7 @@ const kanjiData = [
     {
         kanji: "要",
         onReading: "ヨウ",
-        kunReading: "い.る",
+        kunReading: "い-る",
         strokes: 9,
         grade: 4,
         session: 4,
@@ -5888,7 +5888,7 @@ const kanjiData = [
     {
         kanji: "養",
         onReading: "ヨウ",
-        kunReading: "やしな.う",
+        kunReading: "やしな-う",
         strokes: 14,
         grade: 4,
         session: 4,
@@ -5897,7 +5897,7 @@ const kanjiData = [
     {
         kanji: "浴",
         onReading: "ヨク",
-        kunReading: "あ.びる",
+        kunReading: "あ-びる",
         strokes: 10,
         grade: 4,
         session: 4,
@@ -5906,7 +5906,7 @@ const kanjiData = [
     {
         kanji: "利",
         onReading: "リ",
-        kunReading: "き.く",
+        kunReading: "き-く",
         strokes: 7,
         grade: 4,
         session: 4,
@@ -5924,7 +5924,7 @@ const kanjiData = [
     {
         kanji: "良",
         onReading: "リョウ",
-        kunReading: "よ.い",
+        kunReading: "よ-い",
         strokes: 7,
         grade: 4,
         session: 4,
@@ -5942,7 +5942,7 @@ const kanjiData = [
     {
         kanji: "量",
         onReading: "リョウ",
-        kunReading: "はか.る",
+        kunReading: "はか-る",
         strokes: 12,
         grade: 4,
         session: 4,
@@ -5978,7 +5978,7 @@ const kanjiData = [
     {
         kanji: "冷",
         onReading: "レイ",
-        kunReading: "つめ.たい",
+        kunReading: "つめ-たい",
         strokes: 7,
         grade: 4,
         session: 4,
@@ -5987,7 +5987,7 @@ const kanjiData = [
     {
         kanji: "例",
         onReading: "レイ",
-        kunReading: "たと.える",
+        kunReading: "たと-える",
         strokes: 8,
         grade: 4,
         session: 4,
@@ -6005,7 +6005,7 @@ const kanjiData = [
     {
         kanji: "連",
         onReading: "レン",
-        kunReading: "つら.なる",
+        kunReading: "つら-なる",
         strokes: 10,
         grade: 4,
         session: 4,
@@ -6014,7 +6014,7 @@ const kanjiData = [
     {
         kanji: "老",
         onReading: "ロウ",
-        kunReading: "お.いる",
+        kunReading: "お-いる",
         strokes: 6,
         grade: 4,
         session: 4,
@@ -6023,7 +6023,7 @@ const kanjiData = [
     {
         kanji: "労",
         onReading: "ロウ",
-        kunReading: "いたわ.る",
+        kunReading: "いたわ-る",
         strokes: 7,
         grade: 4,
         session: 4,
@@ -6045,7 +6045,7 @@ const kanjiData = [
     {
         kanji: "圧",
         onReading: "アツ",
-        kunReading: "お.す",
+        kunReading: "お-す",
         strokes: 5,
         grade: 5,
         session: 1,
@@ -6054,7 +6054,7 @@ const kanjiData = [
     {
         kanji: "移",
         onReading: "イ",
-        kunReading: "うつ.る、うつ.す",
+        kunReading: "うつ-る、うつ-す",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6063,7 +6063,7 @@ const kanjiData = [
     {
         kanji: "因",
         onReading: "イン",
-        kunReading: "よ.る",
+        kunReading: "よ-る",
         strokes: 6,
         grade: 5,
         session: 1,
@@ -6072,7 +6072,7 @@ const kanjiData = [
     {
         kanji: "永",
         onReading: "エイ",
-        kunReading: "なが.い",
+        kunReading: "なが-い",
         strokes: 5,
         grade: 5,
         session: 1,
@@ -6081,7 +6081,7 @@ const kanjiData = [
     {
         kanji: "営",
         onReading: "エイ",
-        kunReading: "いとな.む",
+        kunReading: "いとな-む",
         strokes: 12,
         grade: 5,
         session: 1,
@@ -6099,7 +6099,7 @@ const kanjiData = [
     {
         kanji: "易",
         onReading: "エキ、イ",
-        kunReading: "やさ.しい",
+        kunReading: "やさ-しい",
         strokes: 8,
         grade: 5,
         session: 1,
@@ -6135,7 +6135,7 @@ const kanjiData = [
     {
         kanji: "応",
         onReading: "オウ",
-        kunReading: "こた.える",
+        kunReading: "こた-える",
         strokes: 7,
         grade: 5,
         session: 1,
@@ -6144,7 +6144,7 @@ const kanjiData = [
     {
         kanji: "往",
         onReading: "オウ",
-        kunReading: "い.く",
+        kunReading: "い-く",
         strokes: 8,
         grade: 5,
         session: 1,
@@ -6207,7 +6207,7 @@ const kanjiData = [
     {
         kanji: "過",
         onReading: "カ",
-        kunReading: "す.ぎる、あやま.つ",
+        kunReading: "す-ぎる、あやま-つ",
         strokes: 12,
         grade: 5,
         session: 1,
@@ -6225,7 +6225,7 @@ const kanjiData = [
     {
         kanji: "快",
         onReading: "カイ",
-        kunReading: "こころよ.い",
+        kunReading: "こころよ-い",
         strokes: 7,
         grade: 5,
         session: 1,
@@ -6234,7 +6234,7 @@ const kanjiData = [
     {
         kanji: "解",
         onReading: "カイ、ゲ",
-        kunReading: "と.く、と.ける",
+        kunReading: "と-く、と-ける",
         strokes: 13,
         grade: 5,
         session: 1,
@@ -6252,7 +6252,7 @@ const kanjiData = [
     {
         kanji: "確",
         onReading: "カク",
-        kunReading: "たし.か",
+        kunReading: "たし-か",
         strokes: 15,
         grade: 5,
         session: 1,
@@ -6288,7 +6288,7 @@ const kanjiData = [
     {
         kanji: "慣",
         onReading: "カン",
-        kunReading: "な.れる",
+        kunReading: "な-れる",
         strokes: 14,
         grade: 5,
         session: 1,
@@ -6315,7 +6315,7 @@ const kanjiData = [
     {
         kanji: "寄",
         onReading: "キ",
-        kunReading: "よ.る",
+        kunReading: "よ-る",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6360,7 +6360,7 @@ const kanjiData = [
     {
         kanji: "久",
         onReading: "キュウ、ク",
-        kunReading: "ひさ.しい",
+        kunReading: "ひさ-しい",
         strokes: 3,
         grade: 5,
         session: 1,
@@ -6369,7 +6369,7 @@ const kanjiData = [
     {
         kanji: "旧",
         onReading: "キュウ",
-        kunReading: "ふる.い",
+        kunReading: "ふる-い",
         strokes: 5,
         grade: 5,
         session: 1,
@@ -6378,7 +6378,7 @@ const kanjiData = [
     {
         kanji: "居",
         onReading: "キョ",
-        kunReading: "い.る",
+        kunReading: "い-る",
         strokes: 8,
         grade: 5,
         session: 1,
@@ -6387,7 +6387,7 @@ const kanjiData = [
     {
         kanji: "許",
         onReading: "キョ",
-        kunReading: "ゆる.す",
+        kunReading: "ゆる-す",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6432,7 +6432,7 @@ const kanjiData = [
     {
         kanji: "群",
         onReading: "グン",
-        kunReading: "む.れる",
+        kunReading: "む-れる",
         strokes: 13,
         grade: 5,
         session: 1,
@@ -6441,7 +6441,7 @@ const kanjiData = [
     {
         kanji: "経",
         onReading: "ケイ、キョウ",
-        kunReading: "へ.る",
+        kunReading: "へ-る",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6450,7 +6450,7 @@ const kanjiData = [
     {
         kanji: "潔",
         onReading: "ケツ",
-        kunReading: "いさぎよ.い",
+        kunReading: "いさぎよ-い",
         strokes: 15,
         grade: 5,
         session: 1,
@@ -6477,7 +6477,7 @@ const kanjiData = [
     {
         kanji: "険",
         onReading: "ケン",
-        kunReading: "けわ.しい",
+        kunReading: "けわ-しい",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6495,7 +6495,7 @@ const kanjiData = [
     {
         kanji: "限",
         onReading: "ゲン",
-        kunReading: "かぎ.る",
+        kunReading: "かぎ-る",
         strokes: 9,
         grade: 5,
         session: 1,
@@ -6504,7 +6504,7 @@ const kanjiData = [
     {
         kanji: "現",
         onReading: "ゲン",
-        kunReading: "あらわ.れる",
+        kunReading: "あらわ-れる",
         strokes: 11,
         grade: 5,
         session: 1,
@@ -6513,7 +6513,7 @@ const kanjiData = [
     {
         kanji: "減",
         onReading: "ゲン",
-        kunReading: "へ.る、へ.らす",
+        kunReading: "へ-る、へ-らす",
         strokes: 12,
         grade: 5,
         session: 1,
@@ -6540,7 +6540,7 @@ const kanjiData = [
     {
         kanji: "護",
         onReading: "ゴ",
-        kunReading: "まも.る",
+        kunReading: "まも-る",
         strokes: 20,
         grade: 5,
         session: 2,
@@ -6549,7 +6549,7 @@ const kanjiData = [
     {
         kanji: "効",
         onReading: "コウ",
-        kunReading: "き.く",
+        kunReading: "き-く",
         strokes: 8,
         grade: 5,
         session: 2,
@@ -6558,7 +6558,7 @@ const kanjiData = [
     {
         kanji: "厚",
         onReading: "コウ",
-        kunReading: "あつ.い",
+        kunReading: "あつ-い",
         strokes: 9,
         grade: 5,
         session: 2,
@@ -6567,7 +6567,7 @@ const kanjiData = [
     {
         kanji: "耕",
         onReading: "コウ",
-        kunReading: "たがや.す",
+        kunReading: "たがや-す",
         strokes: 10,
         grade: 5,
         session: 2,
@@ -6585,7 +6585,7 @@ const kanjiData = [
     {
         kanji: "構",
         onReading: "コウ",
-        kunReading: "かま.える",
+        kunReading: "かま-える",
         strokes: 14,
         grade: 5,
         session: 2,
@@ -6594,7 +6594,7 @@ const kanjiData = [
     {
         kanji: "興",
         onReading: "コウ、キョウ",
-        kunReading: "おこ.る",
+        kunReading: "おこ-る",
         strokes: 16,
         grade: 5,
         session: 2,
@@ -6612,7 +6612,7 @@ const kanjiData = [
     {
         kanji: "混",
         onReading: "コン",
-        kunReading: "ま.ざる、ま.ぜる",
+        kunReading: "ま-ざる、ま-ぜる",
         strokes: 11,
         grade: 5,
         session: 2,
@@ -6630,7 +6630,7 @@ const kanjiData = [
     {
         kanji: "再",
         onReading: "サイ、サ",
-        kunReading: "ふたた.び",
+        kunReading: "ふたた-び",
         strokes: 6,
         grade: 5,
         session: 2,
@@ -6639,7 +6639,7 @@ const kanjiData = [
     {
         kanji: "災",
         onReading: "サイ",
-        kunReading: "わざわ.い",
+        kunReading: "わざわ-い",
         strokes: 7,
         grade: 5,
         session: 2,
@@ -6657,7 +6657,7 @@ const kanjiData = [
     {
         kanji: "採",
         onReading: "サイ",
-        kunReading: "と.る",
+        kunReading: "と-る",
         strokes: 11,
         grade: 5,
         session: 2,
@@ -6675,7 +6675,7 @@ const kanjiData = [
     {
         kanji: "在",
         onReading: "ザイ",
-        kunReading: "あ.る",
+        kunReading: "あ-る",
         strokes: 6,
         grade: 5,
         session: 2,
@@ -6711,7 +6711,7 @@ const kanjiData = [
     {
         kanji: "酸",
         onReading: "サン",
-        kunReading: "す.い",
+        kunReading: "す-い",
         strokes: 14,
         grade: 5,
         session: 2,
@@ -6729,7 +6729,7 @@ const kanjiData = [
     {
         kanji: "支",
         onReading: "シ",
-        kunReading: "ささ.える",
+        kunReading: "ささ-える",
         strokes: 4,
         grade: 5,
         session: 2,
@@ -6738,7 +6738,7 @@ const kanjiData = [
     {
         kanji: "志",
         onReading: "シ",
-        kunReading: "こころざ.す",
+        kunReading: "こころざ-す",
         strokes: 7,
         grade: 5,
         session: 2,
@@ -6774,7 +6774,7 @@ const kanjiData = [
     {
         kanji: "飼",
         onReading: "シ",
-        kunReading: "か.う",
+        kunReading: "か-う",
         strokes: 13,
         grade: 5,
         session: 2,
@@ -6783,7 +6783,7 @@ const kanjiData = [
     {
         kanji: "示",
         onReading: "ジ、シ",
-        kunReading: "しめ.す",
+        kunReading: "しめ-す",
         strokes: 5,
         grade: 5,
         session: 2,
@@ -6792,7 +6792,7 @@ const kanjiData = [
     {
         kanji: "似",
         onReading: "ジ",
-        kunReading: "に.る",
+        kunReading: "に-る",
         strokes: 7,
         grade: 5,
         session: 2,
@@ -6828,7 +6828,7 @@ const kanjiData = [
     {
         kanji: "謝",
         onReading: "シャ",
-        kunReading: "あやま.る",
+        kunReading: "あやま-る",
         strokes: 17,
         grade: 5,
         session: 2,
@@ -6837,7 +6837,7 @@ const kanjiData = [
     {
         kanji: "授",
         onReading: "ジュ",
-        kunReading: "さず.ける",
+        kunReading: "さず-ける",
         strokes: 11,
         grade: 5,
         session: 2,
@@ -6846,7 +6846,7 @@ const kanjiData = [
     {
         kanji: "修",
         onReading: "シュウ、シュ",
-        kunReading: "おさ.める",
+        kunReading: "おさ-める",
         strokes: 10,
         grade: 5,
         session: 2,
@@ -6855,7 +6855,7 @@ const kanjiData = [
     {
         kanji: "述",
         onReading: "ジュツ",
-        kunReading: "の.べる",
+        kunReading: "の-べる",
         strokes: 8,
         grade: 5,
         session: 2,
@@ -6891,7 +6891,7 @@ const kanjiData = [
     {
         kanji: "招",
         onReading: "ショウ",
-        kunReading: "まね.く",
+        kunReading: "まね-く",
         strokes: 8,
         grade: 5,
         session: 2,
@@ -6900,7 +6900,7 @@ const kanjiData = [
     {
         kanji: "承",
         onReading: "ショウ",
-        kunReading: "うけたまわ.る",
+        kunReading: "うけたまわ-る",
         strokes: 8,
         grade: 5,
         session: 2,
@@ -6945,7 +6945,7 @@ const kanjiData = [
     {
         kanji: "情",
         onReading: "ジョウ、セイ",
-        kunReading: "なさ.け",
+        kunReading: "なさ-け",
         strokes: 11,
         grade: 5,
         session: 2,
@@ -6954,7 +6954,7 @@ const kanjiData = [
     {
         kanji: "織",
         onReading: "ショク、シキ",
-        kunReading: "お.る",
+        kunReading: "お-る",
         strokes: 18,
         grade: 5,
         session: 2,
@@ -6999,7 +6999,7 @@ const kanjiData = [
     {
         kanji: "勢",
         onReading: "セイ",
-        kunReading: "いきお.い",
+        kunReading: "いきお-い",
         strokes: 13,
         grade: 5,
         session: 3,
@@ -7035,7 +7035,7 @@ const kanjiData = [
     {
         kanji: "責",
         onReading: "セキ",
-        kunReading: "せ.める",
+        kunReading: "せ-める",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7053,7 +7053,7 @@ const kanjiData = [
     {
         kanji: "接",
         onReading: "セツ",
-        kunReading: "つ.ぐ",
+        kunReading: "つ-ぐ",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7062,7 +7062,7 @@ const kanjiData = [
     {
         kanji: "設",
         onReading: "セツ",
-        kunReading: "もう.ける",
+        kunReading: "もう-ける",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7080,7 +7080,7 @@ const kanjiData = [
     {
         kanji: "絶",
         onReading: "ゼツ",
-        kunReading: "た.える、た.やす",
+        kunReading: "た-える、た-やす",
         strokes: 12,
         grade: 5,
         session: 3,
@@ -7125,7 +7125,7 @@ const kanjiData = [
     {
         kanji: "造",
         onReading: "ゾウ",
-        kunReading: "つく.る",
+        kunReading: "つく-る",
         strokes: 10,
         grade: 5,
         session: 3,
@@ -7143,7 +7143,7 @@ const kanjiData = [
     {
         kanji: "増",
         onReading: "ゾウ",
-        kunReading: "ま.す、ふ.える",
+        kunReading: "ま-す、ふ-える",
         strokes: 14,
         grade: 5,
         session: 3,
@@ -7161,7 +7161,7 @@ const kanjiData = [
     {
         kanji: "測",
         onReading: "ソク",
-        kunReading: "はか.る",
+        kunReading: "はか-る",
         strokes: 12,
         grade: 5,
         session: 3,
@@ -7179,7 +7179,7 @@ const kanjiData = [
     {
         kanji: "率",
         onReading: "ソツ、リツ",
-        kunReading: "ひき.いる",
+        kunReading: "ひき-いる",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7188,7 +7188,7 @@ const kanjiData = [
     {
         kanji: "損",
         onReading: "ソン",
-        kunReading: "そこ.なう",
+        kunReading: "そこ-なう",
         strokes: 13,
         grade: 5,
         session: 3,
@@ -7197,7 +7197,7 @@ const kanjiData = [
     {
         kanji: "退",
         onReading: "タイ",
-        kunReading: "しりぞ.く",
+        kunReading: "しりぞ-く",
         strokes: 9,
         grade: 5,
         session: 3,
@@ -7206,7 +7206,7 @@ const kanjiData = [
     {
         kanji: "貸",
         onReading: "タイ",
-        kunReading: "か.す",
+        kunReading: "か-す",
         strokes: 12,
         grade: 5,
         session: 3,
@@ -7233,7 +7233,7 @@ const kanjiData = [
     {
         kanji: "断",
         onReading: "ダン",
-        kunReading: "た.つ、ことわ.る",
+        kunReading: "た-つ、ことわ-る",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7242,7 +7242,7 @@ const kanjiData = [
     {
         kanji: "築",
         onReading: "チク",
-        kunReading: "きず.く",
+        kunReading: "きず-く",
         strokes: 16,
         grade: 5,
         session: 3,
@@ -7251,7 +7251,7 @@ const kanjiData = [
     {
         kanji: "張",
         onReading: "チョウ",
-        kunReading: "は.る",
+        kunReading: "は-る",
         strokes: 11,
         grade: 5,
         session: 3,
@@ -7260,7 +7260,7 @@ const kanjiData = [
     {
         kanji: "提",
         onReading: "テイ",
-        kunReading: "さ.げる",
+        kunReading: "さ-げる",
         strokes: 12,
         grade: 5,
         session: 3,
@@ -7296,7 +7296,7 @@ const kanjiData = [
     {
         kanji: "統",
         onReading: "トウ",
-        kunReading: "す.べる",
+        kunReading: "す-べる",
         strokes: 12,
         grade: 5,
         session: 3,
@@ -7314,7 +7314,7 @@ const kanjiData = [
     {
         kanji: "導",
         onReading: "ドウ",
-        kunReading: "みちび.く",
+        kunReading: "みちび-く",
         strokes: 15,
         grade: 5,
         session: 3,
@@ -7332,7 +7332,7 @@ const kanjiData = [
     {
         kanji: "独",
         onReading: "ドク",
-        kunReading: "ひと.り",
+        kunReading: "ひと-り",
         strokes: 9,
         grade: 5,
         session: 3,
@@ -7341,7 +7341,7 @@ const kanjiData = [
     {
         kanji: "任",
         onReading: "ニン",
-        kunReading: "まか.せる",
+        kunReading: "まか-せる",
         strokes: 6,
         grade: 5,
         session: 3,
@@ -7350,7 +7350,7 @@ const kanjiData = [
     {
         kanji: "燃",
         onReading: "ネン",
-        kunReading: "も.える、も.やす",
+        kunReading: "も-える、も-やす",
         strokes: 16,
         grade: 5,
         session: 3,
@@ -7368,7 +7368,7 @@ const kanjiData = [
     {
         kanji: "破",
         onReading: "ハ",
-        kunReading: "やぶ.る",
+        kunReading: "やぶ-る",
         strokes: 10,
         grade: 5,
         session: 4,
@@ -7377,7 +7377,7 @@ const kanjiData = [
     {
         kanji: "犯",
         onReading: "ハン",
-        kunReading: "おか.す",
+        kunReading: "おか-す",
         strokes: 5,
         grade: 5,
         session: 4,
@@ -7386,7 +7386,7 @@ const kanjiData = [
     {
         kanji: "判",
         onReading: "ハン、バン",
-        kunReading: "わか.る",
+        kunReading: "わか-る",
         strokes: 7,
         grade: 5,
         session: 4,
@@ -7404,7 +7404,7 @@ const kanjiData = [
     {
         kanji: "比",
         onReading: "ヒ",
-        kunReading: "くら.べる",
+        kunReading: "くら-べる",
         strokes: 4,
         grade: 5,
         session: 4,
@@ -7413,7 +7413,7 @@ const kanjiData = [
     {
         kanji: "肥",
         onReading: "ヒ",
-        kunReading: "こ.える",
+        kunReading: "こ-える",
         strokes: 8,
         grade: 5,
         session: 4,
@@ -7431,7 +7431,7 @@ const kanjiData = [
     {
         kanji: "備",
         onReading: "ビ",
-        kunReading: "そな.える",
+        kunReading: "そな-える",
         strokes: 12,
         grade: 5,
         session: 4,
@@ -7458,7 +7458,7 @@ const kanjiData = [
     {
         kanji: "貧",
         onReading: "ヒン、ビン",
-        kunReading: "まず.しい",
+        kunReading: "まず-しい",
         strokes: 11,
         grade: 5,
         session: 4,
@@ -7485,7 +7485,7 @@ const kanjiData = [
     {
         kanji: "富",
         onReading: "フ、フウ",
-        kunReading: "と.む",
+        kunReading: "と-む",
         strokes: 12,
         grade: 5,
         session: 4,
@@ -7530,7 +7530,7 @@ const kanjiData = [
     {
         kanji: "編",
         onReading: "ヘン",
-        kunReading: "あ.む",
+        kunReading: "あ-む",
         strokes: 15,
         grade: 5,
         session: 4,
@@ -7548,7 +7548,7 @@ const kanjiData = [
     {
         kanji: "保",
         onReading: "ホ",
-        kunReading: "たも.つ",
+        kunReading: "たも-つ",
         strokes: 9,
         grade: 5,
         session: 4,
@@ -7566,7 +7566,7 @@ const kanjiData = [
     {
         kanji: "報",
         onReading: "ホウ",
-        kunReading: "むく.いる",
+        kunReading: "むく-いる",
         strokes: 12,
         grade: 5,
         session: 4,
@@ -7575,7 +7575,7 @@ const kanjiData = [
     {
         kanji: "豊",
         onReading: "ホウ",
-        kunReading: "ゆた.か",
+        kunReading: "ゆた-か",
         strokes: 13,
         grade: 5,
         session: 4,
@@ -7584,7 +7584,7 @@ const kanjiData = [
     {
         kanji: "防",
         onReading: "ボウ",
-        kunReading: "ふせ.ぐ",
+        kunReading: "ふせ-ぐ",
         strokes: 7,
         grade: 5,
         session: 4,
@@ -7602,7 +7602,7 @@ const kanjiData = [
     {
         kanji: "暴",
         onReading: "ボウ、バク",
-        kunReading: "あば.れる",
+        kunReading: "あば-れる",
         strokes: 15,
         grade: 5,
         session: 4,
@@ -7611,7 +7611,7 @@ const kanjiData = [
     {
         kanji: "務",
         onReading: "ム",
-        kunReading: "つと.める",
+        kunReading: "つと-める",
         strokes: 11,
         grade: 5,
         session: 4,
@@ -7629,7 +7629,7 @@ const kanjiData = [
     {
         kanji: "迷",
         onReading: "メイ",
-        kunReading: "まよ.う",
+        kunReading: "まよ-う",
         strokes: 9,
         grade: 5,
         session: 4,
@@ -7656,7 +7656,7 @@ const kanjiData = [
     {
         kanji: "余",
         onReading: "ヨ",
-        kunReading: "あま.る",
+        kunReading: "あま-る",
         strokes: 7,
         grade: 5,
         session: 4,
@@ -7665,7 +7665,7 @@ const kanjiData = [
     {
         kanji: "預",
         onReading: "ヨ",
-        kunReading: "あず.ける",
+        kunReading: "あず-ける",
         strokes: 13,
         grade: 5,
         session: 4,
@@ -7692,7 +7692,7 @@ const kanjiData = [
     {
         kanji: "留",
         onReading: "リュウ、ル",
-        kunReading: "と.める",
+        kunReading: "と-める",
         strokes: 10,
         grade: 5,
         session: 4,
@@ -7710,7 +7710,7 @@ const kanjiData = [
     {
         kanji: "異",
         onReading: "イ",
-        kunReading: "こと.なる",
+        kunReading: "こと-なる",
         strokes: 13,
         grade: 6,
         session: 1,
@@ -7746,7 +7746,7 @@ const kanjiData = [
     {
         kanji: "映",
         onReading: "エイ",
-        kunReading: "うつ.る、うつ.す",
+        kunReading: "うつ-る、うつ-す",
         strokes: 9,
         grade: 6,
         session: 1,
@@ -7755,7 +7755,7 @@ const kanjiData = [
     {
         kanji: "延",
         onReading: "エン",
-        kunReading: "の.びる、の.べる",
+        kunReading: "の-びる、の-べる",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -7764,7 +7764,7 @@ const kanjiData = [
     {
         kanji: "沿",
         onReading: "エン",
-        kunReading: "そ.う",
+        kunReading: "そ-う",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -7791,7 +7791,7 @@ const kanjiData = [
     {
         kanji: "拡",
         onReading: "カク",
-        kunReading: "ひろ.がる、ひろ.げる",
+        kunReading: "ひろ-がる、ひろ-げる",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -7818,7 +7818,7 @@ const kanjiData = [
     {
         kanji: "割",
         onReading: "カツ",
-        kunReading: "わ.る、わ.れる",
+        kunReading: "わ-る、わ-れる",
         strokes: 12,
         grade: 6,
         session: 1,
@@ -7836,7 +7836,7 @@ const kanjiData = [
     {
         kanji: "干",
         onReading: "カン",
-        kunReading: "ほ.す",
+        kunReading: "ほ-す",
         strokes: 3,
         grade: 6,
         session: 1,
@@ -7845,7 +7845,7 @@ const kanjiData = [
     {
         kanji: "巻",
         onReading: "カン",
-        kunReading: "ま.く",
+        kunReading: "ま-く",
         strokes: 9,
         grade: 6,
         session: 1,
@@ -7854,7 +7854,7 @@ const kanjiData = [
     {
         kanji: "看",
         onReading: "カン",
-        kunReading: "み.る",
+        kunReading: "み-る",
         strokes: 9,
         grade: 6,
         session: 1,
@@ -7872,7 +7872,7 @@ const kanjiData = [
     {
         kanji: "危",
         onReading: "キ",
-        kunReading: "あぶ.ない",
+        kunReading: "あぶ-ない",
         strokes: 6,
         grade: 6,
         session: 1,
@@ -7899,7 +7899,7 @@ const kanjiData = [
     {
         kanji: "貴",
         onReading: "キ",
-        kunReading: "たっと.い、とうと.い",
+        kunReading: "たっと-い、とうと-い",
         strokes: 12,
         grade: 6,
         session: 1,
@@ -7908,7 +7908,7 @@ const kanjiData = [
     {
         kanji: "疑",
         onReading: "ギ",
-        kunReading: "うたが.う",
+        kunReading: "うたが-う",
         strokes: 14,
         grade: 6,
         session: 1,
@@ -7917,7 +7917,7 @@ const kanjiData = [
     {
         kanji: "吸",
         onReading: "キュウ",
-        kunReading: "す.う",
+        kunReading: "す-う",
         strokes: 6,
         grade: 6,
         session: 1,
@@ -7926,7 +7926,7 @@ const kanjiData = [
     {
         kanji: "供",
         onReading: "キョウ、ク",
-        kunReading: "そな.える、とも",
+        kunReading: "そな-える、とも",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -7953,7 +7953,7 @@ const kanjiData = [
     {
         kanji: "勤",
         onReading: "キン、ゴン",
-        kunReading: "つと.める",
+        kunReading: "つと-める",
         strokes: 12,
         grade: 6,
         session: 1,
@@ -7980,7 +7980,7 @@ const kanjiData = [
     {
         kanji: "敬",
         onReading: "ケイ",
-        kunReading: "うやま.う",
+        kunReading: "うやま-う",
         strokes: 12,
         grade: 6,
         session: 1,
@@ -8007,7 +8007,7 @@ const kanjiData = [
     {
         kanji: "激",
         onReading: "ゲキ",
-        kunReading: "はげ.しい",
+        kunReading: "はげ-しい",
         strokes: 16,
         grade: 6,
         session: 1,
@@ -8061,7 +8061,7 @@ const kanjiData = [
     {
         kanji: "厳",
         onReading: "ゲン、ゴン",
-        kunReading: "きび.しい",
+        kunReading: "きび-しい",
         strokes: 17,
         grade: 6,
         session: 1,
@@ -8079,7 +8079,7 @@ const kanjiData = [
     {
         kanji: "呼",
         onReading: "コ",
-        kunReading: "よ.ぶ",
+        kunReading: "よ-ぶ",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -8088,7 +8088,7 @@ const kanjiData = [
     {
         kanji: "誤",
         onReading: "ゴ",
-        kunReading: "あやま.る",
+        kunReading: "あやま-る",
         strokes: 14,
         grade: 6,
         session: 1,
@@ -8133,7 +8133,7 @@ const kanjiData = [
     {
         kanji: "降",
         onReading: "コウ",
-        kunReading: "お.りる、ふ.る",
+        kunReading: "お-りる、ふ-る",
         strokes: 10,
         grade: 6,
         session: 1,
@@ -8151,7 +8151,7 @@ const kanjiData = [
     {
         kanji: "刻",
         onReading: "コク",
-        kunReading: "きざ.む",
+        kunReading: "きざ-む",
         strokes: 8,
         grade: 6,
         session: 1,
@@ -8178,7 +8178,7 @@ const kanjiData = [
     {
         kanji: "困",
         onReading: "コン",
-        kunReading: "こま.る",
+        kunReading: "こま-る",
         strokes: 7,
         grade: 6,
         session: 1,
@@ -8196,7 +8196,7 @@ const kanjiData = [
     {
         kanji: "座",
         onReading: "ザ",
-        kunReading: "すわ.る",
+        kunReading: "すわ-る",
         strokes: 10,
         grade: 6,
         session: 2,
@@ -8205,7 +8205,7 @@ const kanjiData = [
     {
         kanji: "済",
         onReading: "サイ",
-        kunReading: "す.む、す.ます",
+        kunReading: "す-む、す-ます",
         strokes: 11,
         grade: 6,
         session: 2,
@@ -8214,7 +8214,7 @@ const kanjiData = [
     {
         kanji: "裁",
         onReading: "サイ",
-        kunReading: "さば.く、た.つ",
+        kunReading: "さば-く、た-つ",
         strokes: 12,
         grade: 6,
         session: 2,
@@ -8250,7 +8250,7 @@ const kanjiData = [
     {
         kanji: "至",
         onReading: "シ",
-        kunReading: "いた.る",
+        kunReading: "いた-る",
         strokes: 6,
         grade: 6,
         session: 2,
@@ -8277,7 +8277,7 @@ const kanjiData = [
     {
         kanji: "視",
         onReading: "シ",
-        kunReading: "み.る",
+        kunReading: "み-る",
         strokes: 11,
         grade: 6,
         session: 2,
@@ -8313,7 +8313,7 @@ const kanjiData = [
     {
         kanji: "射",
         onReading: "シャ",
-        kunReading: "い.る",
+        kunReading: "い-る",
         strokes: 10,
         grade: 6,
         session: 2,
@@ -8322,7 +8322,7 @@ const kanjiData = [
     {
         kanji: "捨",
         onReading: "シャ",
-        kunReading: "す.てる",
+        kunReading: "す-てる",
         strokes: 11,
         grade: 6,
         session: 2,
@@ -8340,7 +8340,7 @@ const kanjiData = [
     {
         kanji: "若",
         onReading: "ジャク、ニャク",
-        kunReading: "わか.い",
+        kunReading: "わか-い",
         strokes: 8,
         grade: 6,
         session: 2,
@@ -8358,7 +8358,7 @@ const kanjiData = [
     {
         kanji: "収",
         onReading: "シュウ",
-        kunReading: "おさ.める",
+        kunReading: "おさ-める",
         strokes: 4,
         grade: 6,
         session: 2,
@@ -8376,7 +8376,7 @@ const kanjiData = [
     {
         kanji: "就",
         onReading: "シュウ、ジュ",
-        kunReading: "つ.く",
+        kunReading: "つ-く",
         strokes: 12,
         grade: 6,
         session: 2,
@@ -8394,7 +8394,7 @@ const kanjiData = [
     {
         kanji: "従",
         onReading: "ジュウ、ショウ",
-        kunReading: "したが.う",
+        kunReading: "したが-う",
         strokes: 10,
         grade: 6,
         session: 2,
@@ -8412,7 +8412,7 @@ const kanjiData = [
     {
         kanji: "縮",
         onReading: "シュク",
-        kunReading: "ちぢ.む、ちぢ.まる",
+        kunReading: "ちぢ-む、ちぢ-まる",
         strokes: 17,
         grade: 6,
         session: 2,
@@ -8421,7 +8421,7 @@ const kanjiData = [
     {
         kanji: "熟",
         onReading: "ジュク",
-        kunReading: "う.れる",
+        kunReading: "う-れる",
         strokes: 15,
         grade: 6,
         session: 2,
@@ -8466,7 +8466,7 @@ const kanjiData = [
     {
         kanji: "除",
         onReading: "ジョ、ジ",
-        kunReading: "のぞ.く",
+        kunReading: "のぞ-く",
         strokes: 10,
         grade: 6,
         session: 2,
@@ -8484,7 +8484,7 @@ const kanjiData = [
     {
         kanji: "傷",
         onReading: "ショウ",
-        kunReading: "きず、いた.む",
+        kunReading: "きず、いた-む",
         strokes: 13,
         grade: 6,
         session: 2,
@@ -8493,7 +8493,7 @@ const kanjiData = [
     {
         kanji: "障",
         onReading: "ショウ",
-        kunReading: "さわ.る",
+        kunReading: "さわ-る",
         strokes: 14,
         grade: 6,
         session: 2,
@@ -8511,7 +8511,7 @@ const kanjiData = [
     {
         kanji: "蒸",
         onReading: "ジョウ",
-        kunReading: "む.す、む.れる",
+        kunReading: "む-す、む-れる",
         strokes: 13,
         grade: 6,
         session: 2,
@@ -8538,7 +8538,7 @@ const kanjiData = [
     {
         kanji: "垂",
         onReading: "スイ",
-        kunReading: "た.れる、た.らす",
+        kunReading: "た-れる、た-らす",
         strokes: 8,
         grade: 6,
         session: 2,
@@ -8547,7 +8547,7 @@ const kanjiData = [
     {
         kanji: "推",
         onReading: "スイ",
-        kunReading: "お.す",
+        kunReading: "お-す",
         strokes: 11,
         grade: 6,
         session: 2,
@@ -8565,7 +8565,7 @@ const kanjiData = [
     {
         kanji: "盛",
         onReading: "セイ、ジョウ",
-        kunReading: "も.る、さか.る",
+        kunReading: "も-る、さか-る",
         strokes: 11,
         grade: 6,
         session: 2,
@@ -8601,7 +8601,7 @@ const kanjiData = [
     {
         kanji: "専",
         onReading: "セン",
-        kunReading: "もっぱ.ら",
+        kunReading: "もっぱ-ら",
         strokes: 9,
         grade: 6,
         session: 2,
@@ -8619,7 +8619,7 @@ const kanjiData = [
     {
         kanji: "洗",
         onReading: "セン",
-        kunReading: "あら.う",
+        kunReading: "あら-う",
         strokes: 9,
         grade: 6,
         session: 2,
@@ -8628,7 +8628,7 @@ const kanjiData = [
     {
         kanji: "染",
         onReading: "セン",
-        kunReading: "そ.める、そ.まる",
+        kunReading: "そ-める、そ-まる",
         strokes: 9,
         grade: 6,
         session: 2,
@@ -8637,7 +8637,7 @@ const kanjiData = [
     {
         kanji: "善",
         onReading: "ゼン",
-        kunReading: "よ.い",
+        kunReading: "よ-い",
         strokes: 12,
         grade: 6,
         session: 2,
@@ -8646,7 +8646,7 @@ const kanjiData = [
     {
         kanji: "奏",
         onReading: "ソウ",
-        kunReading: "かな.でる",
+        kunReading: "かな-でる",
         strokes: 9,
         grade: 6,
         session: 2,
@@ -8664,7 +8664,7 @@ const kanjiData = [
     {
         kanji: "創",
         onReading: "ソウ",
-        kunReading: "つく.る",
+        kunReading: "つく-る",
         strokes: 12,
         grade: 6,
         session: 3,
@@ -8673,7 +8673,7 @@ const kanjiData = [
     {
         kanji: "装",
         onReading: "ソウ、ショウ",
-        kunReading: "よそお.う",
+        kunReading: "よそお-う",
         strokes: 12,
         grade: 6,
         session: 3,
@@ -8691,7 +8691,7 @@ const kanjiData = [
     {
         kanji: "操",
         onReading: "ソウ",
-        kunReading: "みさお、あやつ.る",
+        kunReading: "みさお、あやつ-る",
         strokes: 16,
         grade: 6,
         session: 3,
@@ -8718,7 +8718,7 @@ const kanjiData = [
     {
         kanji: "存",
         onReading: "ソン",
-        kunReading: "ぞん.じる",
+        kunReading: "ぞん-じる",
         strokes: 6,
         grade: 6,
         session: 3,
@@ -8727,7 +8727,7 @@ const kanjiData = [
     {
         kanji: "尊",
         onReading: "ソン",
-        kunReading: "たっと.い、とうと.い",
+        kunReading: "たっと-い、とうと-い",
         strokes: 12,
         grade: 6,
         session: 3,
@@ -8745,7 +8745,7 @@ const kanjiData = [
     {
         kanji: "担",
         onReading: "タン",
-        kunReading: "かつ.ぐ、にな.う",
+        kunReading: "かつ-ぐ、にな-う",
         strokes: 8,
         grade: 6,
         session: 3,
@@ -8754,7 +8754,7 @@ const kanjiData = [
     {
         kanji: "探",
         onReading: "タン",
-        kunReading: "さぐ.る、さが.す",
+        kunReading: "さぐ-る、さが-す",
         strokes: 11,
         grade: 6,
         session: 3,
@@ -8781,7 +8781,7 @@ const kanjiData = [
     {
         kanji: "暖",
         onReading: "ダン",
-        kunReading: "あたた.か、あたた.かい",
+        kunReading: "あたた-か、あたた-かい",
         strokes: 13,
         grade: 6,
         session: 3,
@@ -8817,7 +8817,7 @@ const kanjiData = [
     {
         kanji: "著",
         onReading: "チョ",
-        kunReading: "あらわ.す",
+        kunReading: "あらわ-す",
         strokes: 11,
         grade: 6,
         session: 3,
@@ -8835,7 +8835,7 @@ const kanjiData = [
     {
         kanji: "頂",
         onReading: "チョウ",
-        kunReading: "いただ.く、いただき",
+        kunReading: "いただ-く、いただき",
         strokes: 11,
         grade: 6,
         session: 3,
@@ -8862,7 +8862,7 @@ const kanjiData = [
     {
         kanji: "痛",
         onReading: "ツウ",
-        kunReading: "いた.い、いた.む",
+        kunReading: "いた-い、いた-む",
         strokes: 12,
         grade: 6,
         session: 3,
@@ -8880,7 +8880,7 @@ const kanjiData = [
     {
         kanji: "討",
         onReading: "トウ",
-        kunReading: "う.つ",
+        kunReading: "う-つ",
         strokes: 10,
         grade: 6,
         session: 3,
@@ -8907,7 +8907,7 @@ const kanjiData = [
     {
         kanji: "届",
         onReading: "カイ",
-        kunReading: "とど.ける、とど.く",
+        kunReading: "とど-ける、とど-く",
         strokes: 8,
         grade: 6,
         session: 3,
@@ -8916,7 +8916,7 @@ const kanjiData = [
     {
         kanji: "難",
         onReading: "ナン",
-        kunReading: "むずか.しい",
+        kunReading: "むずか-しい",
         strokes: 18,
         grade: 6,
         session: 3,
@@ -8934,7 +8934,7 @@ const kanjiData = [
     {
         kanji: "認",
         onReading: "ニン",
-        kunReading: "みと.める",
+        kunReading: "みと-める",
         strokes: 14,
         grade: 6,
         session: 3,
@@ -8943,7 +8943,7 @@ const kanjiData = [
     {
         kanji: "納",
         onReading: "ノウ、ナッ、ナ、ナン",
-        kunReading: "おさ.める、おさ.まる",
+        kunReading: "おさ-める、おさ-まる",
         strokes: 10,
         grade: 6,
         session: 3,
@@ -8970,7 +8970,7 @@ const kanjiData = [
     {
         kanji: "拝",
         onReading: "ハイ",
-        kunReading: "おが.む",
+        kunReading: "おが-む",
         strokes: 8,
         grade: 6,
         session: 3,
@@ -8979,7 +8979,7 @@ const kanjiData = [
     {
         kanji: "背",
         onReading: "ハイ",
-        kunReading: "せ、そむ.く",
+        kunReading: "せ、そむ-く",
         strokes: 9,
         grade: 6,
         session: 3,
@@ -9042,7 +9042,7 @@ const kanjiData = [
     {
         kanji: "秘",
         onReading: "ヒ",
-        kunReading: "ひ.める",
+        kunReading: "ひ-める",
         strokes: 10,
         grade: 6,
         session: 3,
@@ -9060,7 +9060,7 @@ const kanjiData = [
     {
         kanji: "奮",
         onReading: "フン",
-        kunReading: "ふる.う",
+        kunReading: "ふる-う",
         strokes: 16,
         grade: 6,
         session: 3,
@@ -9069,7 +9069,7 @@ const kanjiData = [
     {
         kanji: "並",
         onReading: "ヘイ",
-        kunReading: "なみ、なら.べる",
+        kunReading: "なみ、なら-べる",
         strokes: 8,
         grade: 6,
         session: 3,
@@ -9087,7 +9087,7 @@ const kanjiData = [
     {
         kanji: "閉",
         onReading: "ヘイ",
-        kunReading: "と.じる、と.ざす",
+        kunReading: "と-じる、と-ざす",
         strokes: 11,
         grade: 6,
         session: 3,
@@ -9105,7 +9105,7 @@ const kanjiData = [
     {
         kanji: "補",
         onReading: "ホ",
-        kunReading: "おぎな.う",
+        kunReading: "おぎな-う",
         strokes: 12,
         grade: 6,
         session: 3,
@@ -9114,7 +9114,7 @@ const kanjiData = [
     {
         kanji: "暮",
         onReading: "ボ",
-        kunReading: "く.れる",
+        kunReading: "く-れる",
         strokes: 14,
         grade: 6,
         session: 4,
@@ -9132,7 +9132,7 @@ const kanjiData = [
     {
         kanji: "訪",
         onReading: "ホウ",
-        kunReading: "おとず.れる、たず.ねる",
+        kunReading: "おとず-れる、たず-ねる",
         strokes: 11,
         grade: 6,
         session: 4,
@@ -9141,7 +9141,7 @@ const kanjiData = [
     {
         kanji: "亡",
         onReading: "ボウ、モウ",
-        kunReading: "な.い",
+        kunReading: "な-い",
         strokes: 3,
         grade: 6,
         session: 4,
@@ -9150,7 +9150,7 @@ const kanjiData = [
     {
         kanji: "忘",
         onReading: "ボウ",
-        kunReading: "わす.れる",
+        kunReading: "わす-れる",
         strokes: 7,
         grade: 6,
         session: 4,
@@ -9186,7 +9186,7 @@ const kanjiData = [
     {
         kanji: "密",
         onReading: "ミツ",
-        kunReading: "ひそ.か",
+        kunReading: "ひそ-か",
         strokes: 11,
         grade: 6,
         session: 4,
@@ -9231,7 +9231,7 @@ const kanjiData = [
     {
         kanji: "優",
         onReading: "ユウ",
-        kunReading: "やさ.しい、すぐ.れる",
+        kunReading: "やさ-しい、すぐ-れる",
         strokes: 17,
         grade: 6,
         session: 4,
@@ -9240,7 +9240,7 @@ const kanjiData = [
     {
         kanji: "幼",
         onReading: "ヨウ",
-        kunReading: "おさな.い",
+        kunReading: "おさな-い",
         strokes: 5,
         grade: 6,
         session: 4,
@@ -9249,7 +9249,7 @@ const kanjiData = [
     {
         kanji: "欲",
         onReading: "ヨク",
-        kunReading: "ほ.しい",
+        kunReading: "ほ-しい",
         strokes: 11,
         grade: 6,
         session: 4,
@@ -9267,7 +9267,7 @@ const kanjiData = [
     {
         kanji: "乱",
         onReading: "ラン",
-        kunReading: "みだ.れる、みだ.す",
+        kunReading: "みだ-れる、みだ-す",
         strokes: 7,
         grade: 6,
         session: 4,
@@ -9312,7 +9312,7 @@ const kanjiData = [
     {
         kanji: "臨",
         onReading: "リン",
-        kunReading: "のぞ.む",
+        kunReading: "のぞ-む",
         strokes: 18,
         grade: 6,
         session: 4,
@@ -9321,7 +9321,7 @@ const kanjiData = [
     {
         kanji: "朗",
         onReading: "ロウ",
-        kunReading: "ほが.らか",
+        kunReading: "ほが-らか",
         strokes: 10,
         grade: 6,
         session: 4,

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Auth0 Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+        <!-- Login Section -->
+        <div id="login-section" class="text-center">
+            <h1 class="text-2xl font-bold mb-6">Welcome to My App</h1>
+            <button id="loginBtn" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors">
+                Log In
+            </button>
+        </div>
+
+        <!-- User Profile Section -->
+        <div id="profile-section" class="hidden text-center">
+            <img id="profile-image" class="w-20 h-20 rounded-full mx-auto mb-4" src="/api/placeholder/80/80" alt="Profile">
+            <h2 id="profile-name" class="text-xl font-semibold mb-2"></h2>
+            <p id="profile-email" class="text-gray-600 mb-6"></p>
+            <button id="logoutBtn" class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition-colors">
+                Log Out
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let auth0Client = null;
+        const config = {
+            // 👇 Replace with your values
+            
+          domain: 'dev-gthsjdz4h7rln3ss.us.auth0.com',
+          client_id: '6BJ5YgW6MjqOpbdk0FJY8iPgp1czj092',
+            // This will be updated automatically based on deployment
+            redirectUri: window.location.origin + window.location.pathname
+        };
+
+        async function initializeAuth0() {
+            try {
+                auth0Client = await createAuth0Client({
+                    domain: config.domain,
+                    clientId: config.clientId,
+                    authorizationParams: {
+                        redirect_uri: config.redirectUri
+                    }
+                });
+
+                // Handle callback
+                if (window.location.search.includes("code=")) {
+                    await auth0Client.handleRedirectCallback();
+                    // Clean the URL
+                    window.history.replaceState({}, '', window.location.pathname);
+                }
+
+                await updateUIState();
+            } catch (err) {
+                console.error("Auth0 initialization error:", err);
+            }
+        }
+
+        async function updateUIState() {
+            try {
+                const isAuthenticated = await auth0Client.isAuthenticated();
+                const loginSection = document.getElementById("login-section");
+                const profileSection = document.getElementById("profile-section");
+
+                if (isAuthenticated) {
+                    const user = await auth0Client.getUser();
+                    document.getElementById("profile-image").src = user.picture || '/api/placeholder/80/80';
+                    document.getElementById("profile-name").textContent = user.name;
+                    document.getElementById("profile-email").textContent = user.email;
+                    
+                    loginSection.classList.add("hidden");
+                    profileSection.classList.remove("hidden");
+                } else {
+                    loginSection.classList.remove("hidden");
+                    profileSection.classList.add("hidden");
+                }
+            } catch (err) {
+                console.error("Error updating UI:", err);
+            }
+        }
+
+        // Login handler
+        document.getElementById("loginBtn").addEventListener("click", async () => {
+            try {
+                await auth0Client.loginWithRedirect();
+            } catch (err) {
+                console.error("Login error:", err);
+            }
+        });
+
+        // Logout handler
+        document.getElementById("logoutBtn").addEventListener("click", async () => {
+            try {
+                await auth0Client.logout({
+                    logoutParams: {
+                        returnTo: config.redirectUri
+                    }
+                });
+            } catch (err) {
+                console.error("Logout error:", err);
+            }
+        });
+
+        // Initialize when page loads
+        window.addEventListener("load", initializeAuth0);
+    </script>
+</body>
+</html>
